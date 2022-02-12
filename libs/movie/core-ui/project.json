@@ -1,0 +1,55 @@
+{
+  "root": "libs/movie/core-ui",
+  "sourceRoot": "libs/movie/core-ui/src",
+  "projectType": "library",
+  "tags": [
+    "movie"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/movie/core-ui",
+        "tsConfig": "libs/movie/core-ui/tsconfig.lib.json",
+        "project": "libs/movie/core-ui/package.json",
+        "entryFile": "libs/movie/core-ui/src/index.ts",
+        "external": [
+          "react/jsx-runtime"
+        ],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "libs/movie/core-ui/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/movie/core-ui/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/movie/core-ui"
+      ],
+      "options": {
+        "jestConfig": "libs/movie/core-ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

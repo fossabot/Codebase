@@ -1,0 +1,43 @@
+{
+  "root": "libs/movie/data-access",
+  "sourceRoot": "libs/movie/data-access/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:swc",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/movie/data-access",
+        "main": "libs/movie/data-access/src/index.ts",
+        "tsConfig": "libs/movie/data-access/tsconfig.lib.json",
+        "assets": [
+          "libs/movie/data-access/*.md"
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/movie/data-access/**/*.ts"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/movie/data-access"
+      ],
+      "options": {
+        "jestConfig": "libs/movie/data-access/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

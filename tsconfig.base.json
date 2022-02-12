@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": ".",
+    "paths": {
+      "@projects/libs/movie/core-ui": [
+        "libs/movie/core-ui/src/index"
+      ],
+      "@projects/libs/movie/data-access": [
+        "libs/movie/data-access/src/index"
+      ],
+      "@projects/libs/movie/feature-app": [
+        "libs/movie/feature-app/src/index"
+      ],
+      "@projects/libs/movie/feature-public": [
+        "libs/movie/feature-public/src/index"
+      ],
+      "@projects/libs/movie/shell": [
+        "libs/movie/shell/src/index"
+      ]
+    }
+  }
+}

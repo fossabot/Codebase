@@ -1,0 +1,55 @@
+{
+  "root": "libs/movie/shell",
+  "sourceRoot": "libs/movie/shell/src",
+  "projectType": "library",
+  "tags": [
+    "movie"
+  ],
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/libs/movie/shell",
+        "tsConfig": "libs/movie/shell/tsconfig.lib.json",
+        "project": "libs/movie/shell/package.json",
+        "entryFile": "libs/movie/shell/src/index.ts",
+        "external": [
+          "react/jsx-runtime"
+        ],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "swc",
+        "assets": [
+          {
+            "glob": "libs/movie/shell/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "libs/movie/shell/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/libs/movie/shell"
+      ],
+      "options": {
+        "jestConfig": "libs/movie/shell/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

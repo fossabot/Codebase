@@ -1,0 +1,9 @@
+{
+  "name": "@projects/libs-movie-feature-public",
+  "version": "0.0.1",
+  "dependencies": {
+    "@hookform/resolvers": "^2.8.8",
+    "joi": "^17.6.0",
+    "react-hook-form": "^7.27.0"
+  }
+}
