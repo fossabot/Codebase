@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../../../libs/movie/data-access/node_modules/remove-accents/index.d.ts"],"sourcesContent":["interface RemoveAccents {\r\n  (part: string): string;\r\n  remove(part: string): string;\r\n  has(part: string): boolean;\r\n}\r\n\r\ndeclare var dm: RemoveAccents;\r\nexport = dm;\r\n"],"names":["dm"],"mappings":";iBAOSA,EAAE"}

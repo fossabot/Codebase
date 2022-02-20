@@ -1,20 +1,24 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-import { Link, Title } from '@projects/libs/movie/core-ui';
-import { useState } from 'react';
-import { SignUpButton } from '../sign-up-button/sign-up-button';
+import { Button, Link, Title } from "@projects/libs/movie/core-ui";
+import { useEffect, useState } from "react";
+import { SignUpButton } from "../sign-up-button/sign-up-button";
+import { SignInButton } from "../sign-in-button/sign-in-button";
+import { checkAuth } from "@projects/libs/movie/data-access";
+import { useNavigate } from "@tanstack/react-location";
 // import {} from "@projects/libs/movie/data-access"
+import { motion } from "framer-motion";
 
 /* eslint-disable-next-line */
 export interface NavbarProps {}
 
-const StyledNavbar = styled.div`
-  padding: 1rem 2rem;
+const StyledNavbar = styled(motion.div)`
+  padding: 2rem 2rem;
   display: flex;
   justify-content: space-between;
 `;
 
-const NavLinks = styled.nav`
+const NavLinks = styled(motion.nav)`
   display: flex;
   gap: 3rem;
   align-items: center;
@@ -26,28 +30,57 @@ const NavLink = styled(Link)`
   margin-bottom: 0.1rem;
 `;
 
-export function Navbar(props: NavbarProps) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const NavbarAni = {
+  initial: { opacity: 0, y: -10 },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
 
-  const showSignInModal = () => {
-    setIsModalOpen(true);
-  };
+export function Navbar(props: NavbarProps) {
+  const router = useNavigate();
+  const [isAuthed, setIsAuthed] = useState(false);
+
+  useEffect(() => {
+    async function main() {
+      setIsAuthed(await checkAuth());
+    }
+    main();
+  }, []);
 
   return (
-    <>
-      <StyledNavbar>
-        <Title size="1.8">Movie Reviewer</Title>
-        <NavLinks>
-          <NavLink to="/home">Home</NavLink>
-          <NavLink to="/pricing">Pricing</NavLink>
-          <SignUpButton />
-          {/* <Button variant="contained" onClick={showSignInModal}>
-            Sign Up
-          </Button> */}
-        </NavLinks>
-      </StyledNavbar>
-      <SignUpButton />
-    </>
+    <StyledNavbar>
+      <Title
+        size="1.8"
+        variants={NavbarAni}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
+        Movie Reviewer
+      </Title>
+      <NavLinks
+        variants={NavbarAni}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+      >
+        <NavLink to="/home">Home</NavLink>
+        <NavLink to="/pricing">Pricing</NavLink>
+        {isAuthed ? (
+          <Button onClick={() => router({ to: "/app" })}>To lobby</Button>
+        ) : (
+          <>
+            <SignInButton onSignUp={() => console.log("tesing")} />
+            <SignUpButton onSignIn={() => console.log("tesing")} />
+          </>
+        )}
+      </NavLinks>
+    </StyledNavbar>
   );
 }
 

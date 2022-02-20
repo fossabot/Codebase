@@ -1,4 +1,7 @@
 {
-  "name": "@projects/libs/movie/feature-app",
-  "version": "0.0.1"
+  "name": "@projects/libs-movie-feature-app",
+  "version": "0.0.1",
+  "dependencies": {
+    "react-hook-form": "^7.27.1"
+  }
 }

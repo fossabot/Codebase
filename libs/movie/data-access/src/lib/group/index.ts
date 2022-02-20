@@ -1,6 +1,6 @@
 import { ApiMovieModel, DBGroupModel } from "../../types";
 import { getClient } from "../../utils";
-
+import axios from "axios";
 const sbClient = getClient();
 
 export const addMovieToGroup = async (
@@ -30,13 +30,9 @@ export const addMovieToGroup = async (
   } else return [null, null];
 };
 
-export const getGroupFromId = async (groupId: DBGroupModel["id"]) => {
-  const { data, error } = await sbClient
-    .from("groups")
-    .select("*")
-    .eq("id", groupId)
-    .maybeSingle();
-  return [data, error];
+export const getGroupFromId = async (groupId: string) => {
+  const { data: group } = await axios.get(`/api/groups/${groupId}`);
+  return group;
 };
 
 export const getGroupIcon = (group: DBGroupModel): any => {
@@ -81,13 +77,28 @@ export const isMemberInGroup = async (
   return data ? true : false;
 };
 
-export const createGroup = async (
-  groupName: DBGroupModel["name"],
-  userId: string,
-  groupIcon?: string
-) => {
-  const { data, error } = await sbClient
-    .from("groups")
-    .insert({ name: groupName, owner_id: userId, group_icon: groupIcon });
-  return [data, error];
+export const createGroup = async (groupName: DBGroupModel["name"]) => {
+  try {
+    const { data: result } = await axios.post(
+      "/api/groups",
+      {},
+      { params: { name: groupName } }
+    );
+    return [result, null];
+  } catch (e) {
+    return [null, e];
+  }
 };
+
+// export const getGroup = async ()  => {
+//   try {
+//     const { data: result } = await axios.get(
+//       "/api/groups",
+//       {},
+//       { params: { name: groupName } }
+//     );
+//     return [result, null];
+//   } catch (e) {
+//     return [null, e];
+//   }
+// }

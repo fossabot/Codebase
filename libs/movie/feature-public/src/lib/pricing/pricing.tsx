@@ -1,17 +1,18 @@
-import styled from 'styled-components';
+import { Title } from "@projects/libs/movie/core-ui";
+import styled from "styled-components";
+import Navbar from "../../components/navbar/navbar";
 
 /* eslint-disable-next-line */
 export interface PricingProps {}
 
-const StyledPricing = styled.div`
-  color: pink;
-`;
+const Root = styled.div``;
 
 export function Pricing(props: PricingProps) {
   return (
-    <StyledPricing>
-      <h1>Welcome to Pricing!</h1>
-    </StyledPricing>
+    <Root>
+      <Navbar />
+      <Title>Pricing</Title>
+    </Root>
   );
 }
 

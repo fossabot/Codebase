@@ -1,11 +1,11 @@
-import { ContainedButton } from './variants/contained';
-import { OutlinedButton } from './variants/outlined';
-import { TextButton } from './variants/text';
+import { ContainedButton } from "./variants/contained";
+import { OutlinedButton } from "./variants/outlined";
+import { TextButton } from "./variants/text";
 
 export interface Props {
   shadow?: `${string}px`;
   size?: string;
-  variant?: 'outlined' | 'text' | 'contained';
+  variant?: "outlined" | "text" | "contained";
   onClick?: (e: any) => void;
   children: any;
   [key: string]: any;
@@ -22,24 +22,13 @@ export interface Props {
   
   Background secondary hover color: `--bg-secondary-color--hover`
 */
-export function Button({
-  variant = 'contained',
-  shadow,
-  size,
-  onClick,
-  children,
-}: Props) {
-  const props = {
-    shadow,
-    size,
-    onClick,
-  };
+export function Button({ variant = "contained", children, ...props }: Props) {
   switch (variant) {
-    case 'text':
+    case "text":
       return <TextButton {...props}>{children}</TextButton>;
-    case 'contained':
+    case "contained":
       return <ContainedButton {...props}>{children}</ContainedButton>;
-    case 'outlined':
+    case "outlined":
       return <OutlinedButton {...props}>{children}</OutlinedButton>;
     default:
       return <ContainedButton {...props}>{children}</ContainedButton>;

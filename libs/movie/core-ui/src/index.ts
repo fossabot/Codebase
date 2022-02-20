@@ -7,3 +7,5 @@ export * from "./lib/link/link";
 export * from "./lib/modal/modal";
 export * from "./lib/text/text";
 export * from "./lib/title/title";
+export * from "./lib/col/col";
+export * from "./lib/row/row";

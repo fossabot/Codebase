@@ -1,9 +1,30 @@
-import { getClient } from "../../utils";
+import axios from "axios";
 
-const client = getClient();
+export const signUp = async (email: string, password: string) => {
+  return await axios.post("/api/auth/signup", {
+    email,
+    password,
+  });
+};
 
-export const signUp = async (email: string, password: string) =>
-  await client.auth.signUp({ email, password });
+export const signIn = async (email: string, password: string) => {
+  console.log({ email, password });
+  return await axios.post("/api/auth/login", {
+    email,
+    password,
+  });
+};
 
-export const login = async (email: string, password: string) =>
-  await client.auth.signIn({ email, password }, { redirectTo: "/app/groups" });
+export const checkAuth = async () => {
+  try {
+    const { data: result } = await axios.get("/api/auth/status");
+    return result.status === "AUTHED";
+  } catch {
+    return false;
+  }
+};
+
+export const getUser = async () => {
+  const { data: result } = await axios.get("/api/auth/user");
+  return result;
+};

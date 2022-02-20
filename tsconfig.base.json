@@ -1,23 +1,32 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "rootDir": ".",
+    "rootDir": "./",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
     "paths": {
-      "@projects/libs/movie/core-ui": [
-        "libs/movie/core-ui/src/index"
-      ],
+      "@projects/libs/movie/core-ui": ["libs/movie/core-ui/src/index.ts"],
       "@projects/libs/movie/data-access": [
-        "libs/movie/data-access/src/index"
+        "libs/movie/data-access/src/index.ts"
       ],
       "@projects/libs/movie/feature-app": [
-        "libs/movie/feature-app/src/index"
+        "libs/movie/feature-app/src/index.tsx"
       ],
       "@projects/libs/movie/feature-public": [
-        "libs/movie/feature-public/src/index"
+        "libs/movie/feature-public/src/index.tsx"
       ],
-      "@projects/libs/movie/shell": [
-        "libs/movie/shell/src/index"
-      ]
+      "@projects/libs/movie/shell": ["libs/movie/shell/src/index.tsx"]
     }
   }
 }

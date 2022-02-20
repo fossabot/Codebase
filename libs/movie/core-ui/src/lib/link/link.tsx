@@ -1,10 +1,10 @@
-import styled from 'styled-components';
-import { Link as RLink } from 'react-location';
+import styled from "styled-components";
+import { Link as RLink } from "@tanstack/react-location";
 
-/* eslint-disable-next-line */
 export interface LinkProps {
   children: any;
-  to: string;
+  to?: string;
+  onClick?: () => void;
 }
 
 const StyledLink = styled(RLink)`

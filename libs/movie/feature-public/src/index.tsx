@@ -1,4 +1,4 @@
-import { Navigate, Route } from "react-location";
+import { Navigate, Route } from "@tanstack/react-location";
 import Home from "./lib/home/home";
 import Pricing from "./lib/pricing/pricing";
 

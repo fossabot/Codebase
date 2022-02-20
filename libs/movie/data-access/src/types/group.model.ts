@@ -1,5 +1,5 @@
 export interface DBGroupModel {
-  id: number;
+  id: string;
   created_at: Date;
   name: string;
   owner_id: string;

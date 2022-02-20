@@ -1,11 +1,5 @@
-import { getClient } from "../../utils";
+import axios from "axios";
 
-const sbClient = getClient();
-
-export const getGroupsFromUid = async (userId: string) => {
-  const { data, error } = await sbClient
-    .from("groups")
-    .select("*")
-    .eq("owner_id", userId);
-  return [data, error];
+export const getAllGroups = async () => {
+  return await axios.get("/api/groups/all");
 };

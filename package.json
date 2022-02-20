@@ -49,16 +49,18 @@
   },
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "servers/*"
   ],
   "dependencies": {
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@tanstack/react-location": "^3.6.1",
     "core-js": "^3.6.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-location": "^3.3.4",
+    "react-is": "17.0.2",
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.0.0",
