@@ -5,13 +5,14 @@ import {
   Modal,
   Text,
   Title,
+  Col,
+  Row,
 } from "@projects/libs/movie/core-ui";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as Joi from "joi";
 import { joiResolver } from "@hookform/resolvers/joi";
 import styled from "styled-components";
-import { Col } from "@projects/libs/movie/core-ui";
 import { signIn } from "@projects/libs/movie/data-access";
 
 /* eslint-disable-next-line */
@@ -23,13 +24,13 @@ const ErrorMsg = styled.p`
   color: rgba(200, 100, 100);
 `;
 
-const Row = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  gap: ${(props: { gap?: string }) => `${props?.gap || "1"}rem`};
-  align-items: space-between;
-`;
+// const Row = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   gap: ${(props: { gap?: string }) => `${props?.gap || "1"}rem`};
+//   align-items: space-between;
+// `;
 
 const Model = Joi.object({
   email: Joi.string().pattern(
@@ -64,14 +65,13 @@ export function SignInButton(props: AuthModalProps) {
     }
   }, [email, password]);
 
-  const onSubmit = async (data: unkown) => {
+  const onSubmit = async (data: any) => {
     const { email, password } = data;
     console.log(email, password);
     try {
-      const { data: result } = await signIn(email, password);
-    } catch (e: unkown) {
-      console.log(e.response);
-      if (e!.response.data!.message === "Unauthorized") {
+      await signIn(email, password);
+    } catch (e: any) {
+      if (e.response.data.message === "Unauthorized") {
         setError({ msg: "User already exists!", btnDisable: true });
       }
     }
@@ -85,7 +85,7 @@ export function SignInButton(props: AuthModalProps) {
       </Button>
       <Modal isOpen={isOpen} width="45">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Row gap="1.5">
+          <Row far>
             <Col far style={{ alignItems: "flex-start" }}>
               <Title>Sign Up Today!</Title>
               <Text

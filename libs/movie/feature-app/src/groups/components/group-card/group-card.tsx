@@ -1,10 +1,9 @@
 import { Card, Title } from "@projects/libs/movie/core-ui";
 import { useNavigate } from "@tanstack/react-location";
-import styled, { css } from "styled-components";
 
 /* eslint-disable-next-line */
 export interface GroupCardProps {
-  group: unkown;
+  group: any;
 }
 
 export function GroupCard({ group }: GroupCardProps) {
@@ -12,7 +11,7 @@ export function GroupCard({ group }: GroupCardProps) {
 
   return (
     <Card
-      padding="0.75"
+      // padding="0.75"
       style={{
         display: "flex",
         justifyContent: "center",

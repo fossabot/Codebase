@@ -1,9 +1,9 @@
 import { Title } from "@projects/libs/movie/core-ui";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
-/* eslint-disable-next-line */
 interface NavbarProps {
-  buttons: unkown;
+  buttons: ReactNode;
   title: string;
 }
 

@@ -11,12 +11,14 @@
         "outputPath": "dist/libs/movie/shell",
         "tsConfig": "libs/movie/shell/tsconfig.lib.json",
         "project": "libs/movie/shell/package.json",
-        "entryFile": "libs/movie/shell/src/index.ts",
+        "entryFile": "libs/movie/shell/src/index.tsx",
         "external": ["react/jsx-runtime"],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "swc",
+        "extractCss": true,
+        "buildableProjectDepsInPackageJsonType": "dependencies",
         "assets": [
-          "./src/styles/globals.css",
+          "libs/movie/shell/src/styles/globals.css",
           {
             "glob": "libs/movie/shell/README.md",
             "input": ".",

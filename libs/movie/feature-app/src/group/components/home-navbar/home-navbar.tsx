@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 /* eslint-disable-next-line */
 export interface NavbarProps {
-  group: unkown;
+  group: any;
 }
 
 const Container = styled.div`

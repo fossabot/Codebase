@@ -39,7 +39,7 @@ export function GroupHome(props: HomeProps) {
     <>
       <Navbar group={group} />
       <Grid>
-        {(movies || []).map((movie: unkown, index: number) => (
+        {(movies || []).map((movie: unknown, index: number) => (
           <MovieCard movie={movie} key={index} />
         ))}
       </Grid>

@@ -28,7 +28,7 @@ const MainContainer = styled(Row)`
 `;
 
 const HeaderContainer = styled(Container)``;
-const ReviewContainer = styled(Container)``;
+// const ReviewContainer = styled(Container)``;
 const PreviewContainer = styled(Container)``;
 
 const Preview = styled.iframe`
@@ -36,23 +36,23 @@ const Preview = styled.iframe`
   aspect-ratio: 16 / 9;
 `;
 
-const CommentsContainer = styled(Container)`
-  padding: 2rem;
-`;
+// const CommentsContainer = styled(Container)`
+//   padding: 2rem;
+// `;
 
-const CommentHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-`;
+// const CommentHeader = styled.div`
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-start;
+// `;
 
-const LeftCommentHeader = styled.div`
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-`;
+// const LeftCommentHeader = styled.div`
+//   display: flex;
+//   align-items: flex-start;
+//   justify-content: space-between;
+//   gap: 1.5rem;
+//   flex-wrap: wrap;
+// `;
 
 export function GroupMovie(props: MovieProps) {
   const { params } = useMatch();
@@ -61,18 +61,23 @@ export function GroupMovie(props: MovieProps) {
     title: "",
     overview: "",
     poster_path: "",
+    movie_id: "",
   });
 
   const [preview, setPreview] = useState<any>(null);
 
   useEffect(() => {
     async function main() {
-      const [movie, error] = await getMovieFromId(
+      const [movie]: any[] = await getMovieFromId(
         params["movieId"],
         params["id"]
       );
       setMovie(movie);
-      const [previewdb] = await getMoviePreview(movie.movie_id, params["id"]);
+
+      const [previewdb] = await getMoviePreview(
+        (movie as any).movie_id,
+        params["id"]
+      );
       setPreview(previewdb);
     }
     main();
@@ -86,11 +91,11 @@ export function GroupMovie(props: MovieProps) {
           <Text>{movie?.overview}</Text>
         </HeaderContainer>
         <PreviewContainer>
-          {preview?.results[0]?.key !== undefined ? (
+          {preview.results[0]?.key !== undefined ? (
             <Preview
               width="100%"
               height="315"
-              src={`https://www.youtube.com/embed/${preview?.results[0]?.key}`}
+              src={`https://www.youtube.com/embed/${preview["results"][0]?.key}`}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -5,45 +5,49 @@ import { GroupMovie } from "./group/routes/movie/movie";
 import { MovieSearch } from "./group/routes/search/search";
 import CreateGroup from "./groups/routes/create/group";
 import { GroupsHome } from "./groups/routes/home/home";
+import { createElement } from "react";
 
 export const MovieAppFeatureRoutes: Route[] = [
   {
-    element: <Main />,
+    element: createElement(Main),
     children: [
       {
         path: "groups",
-        element: <GroupsHome />,
+        element: createElement(GroupsHome),
       },
       {
         path: "group/:id",
         children: [
           {
             path: "search",
-            element: <MovieSearch />,
+            element: createElement(MovieSearch),
           },
           {
             path: "m",
-            element: <GroupHome />,
+            element: createElement(GroupHome),
           },
           {
             path: "m/:movieId",
-            element: <GroupMovie />,
+            element: createElement(GroupMovie),
           },
           {
             path: "/",
-            element: <Navigate to="m" replace={true} />,
+            element: createElement(Navigate, { to: "m", replace: true }),
           },
         ],
       },
       {
         path: "/",
-        element: <Navigate to="/app/groups" />,
+        element: createElement(Navigate, { to: "/app/groups" }),
       },
       {
         path: "create",
-        element: <CreateGroup />,
+        element: createElement(CreateGroup),
       },
-      { path: "group", element: <Navigate to="/app/groups" /> },
+      {
+        path: "group",
+        element: createElement(Navigate, { to: "/app/groups" }),
+      },
     ],
   },
 ];

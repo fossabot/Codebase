@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 /* eslint-disable-next-line */
 export interface MovieSearchCardProps {
-  movie: unkown;
+  movie: unknown;
   onAdd: () => void;
 }
 
@@ -34,14 +34,16 @@ const BtnContainer = styled.div`
 `;
 
 export function MovieSearchCard({ movie, onAdd }: MovieSearchCardProps) {
-  const poster = `https://image.tmdb.org/t/p/w200/${movie.poster_path}`;
+  const poster = `https://image.tmdb.org/t/p/w200/${
+    (movie as any).poster_path
+  }`;
 
   return (
     <SMovieSearchCard>
       <Image src={poster} alt="" />
       <Container>
-        <Title>{movie.title}</Title>
-        <Text>{movie.overview}</Text>
+        <Title>{(movie as any).title}</Title>
+        <Text>{(movie as any).overview}</Text>
         <BtnContainer>
           <Button variant="text" onClick={onAdd}>
             Add To group

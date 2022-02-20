@@ -5,15 +5,14 @@ export interface CardProps {
   width?: string;
   height?: string;
   padding?: string;
+  theme?: { background: { third: string } };
+  hoverColor?: boolean;
 }
 
 export const Card = styled.div`
-  padding: ${({ padding = "0" }) => `${padding}rem`};
+  padding: ${({ padding = "0" }: CardProps) => `${padding}rem`};
   display: flex;
   flex-direction: column;
-  /* & > * {
-    width: 100%;
-  } */
 
   cursor: pointer;
 
@@ -30,7 +29,6 @@ export const Card = styled.div`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme, hoverColor = false }: unkown) =>
-      theme.background.third};
+    background-color: ${({ theme }: CardProps) => theme?.background.third};
   }
 `;

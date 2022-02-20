@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 /* eslint-disable-next-line */
 export interface MovieCardProps {
-  movie: unkown;
+  movie: unknown;
 }
 
 const Image = styled.img`
@@ -25,19 +25,21 @@ const LowerContainer = styled.div`
 `;
 
 export function MovieCard({ movie }: MovieCardProps) {
-  const backgroundURL = `https://image.tmdb.org/t/p/w200/${movie.backdrop_path}`;
+  const backgroundURL = `https://image.tmdb.org/t/p/w200/${
+    (movie as any).backdrop_path
+  }`;
 
   const router = useNavigate();
 
   const gotoMovie = () => {
-    router({ to: movie.id });
+    router({ to: (movie as any).id });
   };
 
   return (
     <Container onClick={gotoMovie}>
       <Image src={backgroundURL} alt="" />
       <LowerContainer>
-        <Title size="1.5">{movie.title}</Title>
+        <Title size="1.5">{(movie as any).title}</Title>
       </LowerContainer>
     </Container>
   );

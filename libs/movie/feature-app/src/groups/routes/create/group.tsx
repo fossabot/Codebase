@@ -2,14 +2,9 @@ import { createGroup, getUser } from "@projects/libs/movie/data-access";
 import { useForm } from "react-hook-form";
 
 export default function CreateGroup() {
-  const {
-    register,
-    watch,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
+  const { register, handleSubmit } = useForm();
 
-  const onSubmit = async (data: unkown) => {
+  const onSubmit = async (data: any) => {
     const user = await getUser();
     console.log(user);
     console.log(await createGroup(data.groupName));

@@ -13,7 +13,11 @@ export * from "./router";
 export * from "./store";
 
 const Styles = styled.div`
-  background-color: ${({ theme }: unkown) => theme.background.primary};
+  background-color: ${({
+    theme,
+  }: {
+    theme: { background: { primary: string } };
+  }) => theme.background.primary};
   min-height: 100vh;
   font-size: 16px;
   * {
@@ -26,7 +30,11 @@ const Styles = styled.div`
 export function Root() {
   return (
     <StrictMode>
-      <Router routes={Routes} location={location} filterRoutes={rankRoutes}>
+      <Router
+        routes={Routes as any}
+        location={location}
+        filterRoutes={rankRoutes}
+      >
         <RecoilRoot>
           <QueryClientProvider client={client}>
             <ThemeProvider theme={DarkTheme}>

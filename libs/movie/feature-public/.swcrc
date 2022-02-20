@@ -4,7 +4,8 @@
     "parser": {
       "syntax": "typescript",
       "decorators": true,
-      "dynamicImport": true
+      "dynamicImport": true,
+      "jsx": true
     },
     "transform": {
       "decoratorMetadata": true,

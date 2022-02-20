@@ -13,23 +13,10 @@ import MovieSearchCard from "../../components/movie-search-card/movie-search-car
 /* eslint-disable-next-line */
 export interface SearchProps {}
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  align-items: center;
-  justify-content: space-between;
-`;
-
 const Grid = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-
-  /* display: grid;
-
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
 `;
 
 export function MovieSearch(props: SearchProps) {
@@ -43,9 +30,7 @@ export function MovieSearch(props: SearchProps) {
       const groupFromId = await getGroupFromId(params["id"]);
       setGroup(groupFromId);
 
-      const [recommendations, error] = await getMovieRecommendations(
-        params["id"]
-      );
+      const [recommendations] = await getMovieRecommendations(params["id"]);
       setMovies(recommendations);
     }
     main();
@@ -61,7 +46,7 @@ export function MovieSearch(props: SearchProps) {
     <>
       <Navbar group={group} />
       <Grid>
-        {movies?.results?.map((movie: unkown, index: number) => (
+        {movies?.results?.map((movie: any, index: number) => (
           <MovieSearchCard
             key={index}
             movie={movie}

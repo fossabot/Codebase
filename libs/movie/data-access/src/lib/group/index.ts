@@ -24,7 +24,7 @@ export const getGroupFromId = async (groupId: string) => {
   return group;
 };
 
-export const getGroupIcon = (group: DBGroupModel): unkown => {
+export const getGroupIcon = (group: DBGroupModel): any => {
   if (group.group_icon) {
     const [bucket, ...pathArr] = group.group_icon.split("/");
     const path = pathArr.join("/");
