@@ -1,8 +1,11 @@
+import { HttpService } from '@nestjs/axios';
 import { MoviesService } from './movies.service';
 export declare class MoviesController {
     private readonly movies;
-    constructor(movies: MoviesService);
-    getAll(groupId: string): Promise<import(".prisma/client").Movie[]>;
+    private readonly http;
+    constructor(movies: MoviesService, http: HttpService);
+    getAll(groupId: string, movieId: string): Promise<import(".prisma/client").Movie | import(".prisma/client").Movie[]>;
     createMovie(groupId: string, body: any): Promise<import(".prisma/client").Movie>;
-    getPopularMovies(): Promise<string[]>;
+    getPopularMovies(): Promise<any>;
+    getYtVideo(movieId: string): Promise<any>;
 }

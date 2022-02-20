@@ -1,7 +1,7 @@
 "use strict";
-exports.rankings = exports.matchSorter = exports.defaultBaseSortFn = void 0;
+exports.matchSorter = exports.defaultBaseSortFn = exports.rankings = void 0;
+exports.rankings = rankings;
 exports.defaultBaseSortFn = defaultBaseSortFn;
 exports.matchSorter = matchSorter;
-exports.rankings = rankings;
 
 //# sourceMappingURL=index.d.js.map

@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 
 /* eslint-disable-next-line */
 export interface GroupCardProps {
-  group: any;
+  group: unkown;
 }
 
 export function GroupCard({ group }: GroupCardProps) {

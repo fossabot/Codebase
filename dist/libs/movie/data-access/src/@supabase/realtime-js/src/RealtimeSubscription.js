@@ -121,7 +121,7 @@ let RealtimeSubscription = class RealtimeSubscription {
         this.bindings.filter((bind)=>{
             // Bind all events if the user specifies a wildcard.
             if (bind.event === '*') {
-                return event === (payload == null ? void 0 : payload.type);
+                return event === (payload === null || payload === void 0 ? void 0 : payload.type);
             } else {
                 return bind.event === event;
             }

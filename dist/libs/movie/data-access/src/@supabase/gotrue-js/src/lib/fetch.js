@@ -14,21 +14,21 @@ const handleError = (error, reject)=>{
     error.json().then((err)=>{
         return reject({
             message: _getErrorMessage(err),
-            status: (error == null ? void 0 : error.status) || 500
+            status: (error === null || error === void 0 ? void 0 : error.status) || 500
         });
     });
 };
 const _getRequestParams = (method, options, body)=>{
     const params = {
         method,
-        headers: (options == null ? void 0 : options.headers) || {}
+        headers: (options === null || options === void 0 ? void 0 : options.headers) || {}
     };
     if (method === 'GET') {
         return params;
     }
-    params.headers = swcHelpers.extends({
+    params.headers = swcHelpers.objectSpread({
         'Content-Type': 'text/plain;charset=UTF-8'
-    }, options == null ? void 0 : options.headers);
+    }, options === null || options === void 0 ? void 0 : options.headers);
     params.body = JSON.stringify(body);
     return params;
 };
@@ -36,7 +36,7 @@ async function _handleRequest(fetcher = _crossFetch.default, method, url, option
     return new Promise((resolve, reject)=>{
         fetcher(url, _getRequestParams(method, options, body)).then((result)=>{
             if (!result.ok) throw result;
-            if (options == null ? void 0 : options.noResolveJson) return resolve;
+            if (options === null || options === void 0 ? void 0 : options.noResolveJson) return resolve;
             return result.json();
         }).then((data)=>resolve(data)
         ).catch((error)=>handleError(error, reject)

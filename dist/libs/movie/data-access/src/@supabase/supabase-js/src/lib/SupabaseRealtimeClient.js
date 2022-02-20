@@ -31,7 +31,7 @@ let SupabaseRealtimeClient = class SupabaseRealtimeClient {
                 old: {},
                 errors: payload.errors
             };
-            enrichedPayload = swcHelpers.extends({}, enrichedPayload, this.getPayloadRecords(payload));
+            enrichedPayload = swcHelpers.objectSpread({}, enrichedPayload, this.getPayloadRecords(payload));
             callback(enrichedPayload);
         });
         return this;

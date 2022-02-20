@@ -81,7 +81,7 @@ let PostgrestTransformBuilder = class PostgrestTransformBuilder extends _types.P
         _this.then = (onfulfilled, onrejected)=>{
             return this.then((res)=>{
                 var ref, ref1;
-                if ((ref = res.error) == null ? void 0 : (ref1 = ref.details) == null ? void 0 : ref1.includes('Results contain 0 rows')) {
+                if ((ref = res.error) === null || ref === void 0 ? void 0 : (ref1 = ref.details) === null || ref1 === void 0 ? void 0 : ref1.includes('Results contain 0 rows')) {
                     return onfulfilled({
                         error: null,
                         data: null,

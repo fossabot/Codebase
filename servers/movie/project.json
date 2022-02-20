@@ -5,7 +5,6 @@
   "targets": {
     "lint": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["./dist"],
       "options": {
         "cwd": "servers/movie",
         "command": "yarn lint"
@@ -22,11 +21,29 @@
     },
     "build": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["build/packages/js"],
+      "outputs": ["dist/servers/movie"],
+      "options": {
+        "cwd": "servers/movie",
+        "command": "yarn build"
+      },
+      "configurations": {
+        "production": {
+          "cwd": "servers/movie",
+          "command": "yarn build --webpack"
+        },
+        "development": {
+          "cwd": "servers/movie",
+          "command": "yarn build --watch"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": ["dist/servers/movie/out-tsc"],
       "options": {
         "cwd": "servers/movie",
 
-        "command": "yarn build"
+        "command": "yarn start:dev"
       }
     }
   },

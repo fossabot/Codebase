@@ -30,6 +30,7 @@ let MoviesService = class MoviesService {
     async create(movie, groupId) {
         const { overview, backdrop_path, title, poster_path, release_date, movie_id, adult, } = movie;
         try {
+            console.log(movie_id);
             return await this.db.movie.create({
                 data: {
                     title,
@@ -39,13 +40,26 @@ let MoviesService = class MoviesService {
                     release_date,
                     movie_id,
                     adult,
-                    groupId,
+                    group: {
+                        connect: {
+                            id: groupId,
+                        },
+                    },
                 },
             });
         }
-        catch (_a) {
+        catch (e) {
+            console.log('ERRROR');
             throw new common_1.HttpException({ error: 'MOVIE_EXISTS' }, 409);
         }
+    }
+    async getById(movieId) {
+        const data = await this.db.movie.findUnique({
+            where: {
+                id: movieId,
+            },
+        });
+        return data;
     }
 };
 MoviesService = __decorate([

@@ -18,13 +18,13 @@ const Grid = styled.div`
   gap: 2rem;
   overflow: hidden;
 
-  @media screen and (max-width: 400px) {
+  /* @media screen and (max-width: 400px) {
     margin-inline: 0.5rem;
     padding-block: 0.5rem;
-  }
+  } */
 `;
 
-export const loader = (props: any) => {
+export const loader = (props: unkown) => {
   console.log("LOADDER", props);
 };
 

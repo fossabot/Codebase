@@ -4,4 +4,5 @@ export declare class MoviesService {
     constructor(db: PrismaService);
     getAll(groupId: string): Promise<import(".prisma/client").Movie[]>;
     create(movie: any, groupId: string): Promise<import(".prisma/client").Movie>;
+    getById(movieId: string): Promise<import(".prisma/client").Movie>;
 }

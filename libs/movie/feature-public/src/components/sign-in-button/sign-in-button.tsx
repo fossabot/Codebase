@@ -64,12 +64,12 @@ export function SignInButton(props: AuthModalProps) {
     }
   }, [email, password]);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: unkown) => {
     const { email, password } = data;
     console.log(email, password);
     try {
       const { data: result } = await signIn(email, password);
-    } catch (e: any) {
+    } catch (e: unkown) {
       console.log(e.response);
       if (e!.response.data!.message === "Unauthorized") {
         setError({ msg: "User already exists!", btnDisable: true });

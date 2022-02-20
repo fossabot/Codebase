@@ -13,10 +13,14 @@ export * from "./router";
 export * from "./store";
 
 const Styles = styled.div`
-  background-color: ${({ theme }: any) => theme.background.primary};
+  background-color: ${({ theme }: unkown) => theme.background.primary};
   min-height: 100vh;
   font-size: 16px;
-  padding-inline: 3rem;
+  * {
+    box-sizing: border-box;
+  }
+  padding: 0;
+  margin: 0;
 `;
 
 export function Root() {

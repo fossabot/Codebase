@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 /* eslint-disable-next-line */
 export interface ModalProps {
   isOpen: boolean;
-  children?: any;
+  children?: ReactNode;
   width?: string;
 }
 

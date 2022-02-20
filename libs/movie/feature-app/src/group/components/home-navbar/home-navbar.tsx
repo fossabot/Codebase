@@ -4,14 +4,14 @@ import styled from "styled-components";
 
 /* eslint-disable-next-line */
 export interface NavbarProps {
-  group: any;
+  group: unkown;
 }
 
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 2rem;
+  padding-block: 0;
 `;
 
 const NavLinks = styled.div`

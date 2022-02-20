@@ -11,12 +11,14 @@ const common_1 = require("@nestjs/common");
 const movies_controller_1 = require("./movies.controller");
 const movies_service_1 = require("./movies.service");
 const prisma_service_1 = require("../prisma/prisma.service");
+const axios_1 = require("@nestjs/axios");
 let MoviesModule = class MoviesModule {
 };
 MoviesModule = __decorate([
     (0, common_1.Module)({
         controllers: [movies_controller_1.MoviesController],
         providers: [movies_service_1.MoviesService, prisma_service_1.PrismaService],
+        imports: [axios_1.HttpModule],
     })
 ], MoviesModule);
 exports.MoviesModule = MoviesModule;

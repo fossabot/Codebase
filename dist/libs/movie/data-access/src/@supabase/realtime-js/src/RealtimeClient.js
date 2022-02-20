@@ -139,7 +139,7 @@ let RealtimeClient = class RealtimeClient {
         let callback = ()=>{
             this.encode(data, (result)=>{
                 var ref;
-                (ref = this.conn) == null ? void 0 : ref.send(result);
+                (ref = this.conn) === null || ref === void 0 ? void 0 : ref.send(result);
             });
         };
         this.log('push', `${topic} ${event} (${ref1})`, payload);
@@ -154,7 +154,7 @@ let RealtimeClient = class RealtimeClient {
             let { topic , event , payload , ref  } = msg;
             if (ref && ref === this.pendingHeartbeatRef) {
                 this.pendingHeartbeatRef = null;
-            } else if (event === (payload == null ? void 0 : payload.type)) {
+            } else if (event === (payload === null || payload === void 0 ? void 0 : payload.type)) {
                 this._resetHeartbeat();
             }
             this.log('receive', `${payload.status || ''} ${topic} ${event} ${ref && '(' + ref + ')' || ''}`, payload);
@@ -267,7 +267,7 @@ let RealtimeClient = class RealtimeClient {
             var ref;
             this.pendingHeartbeatRef = null;
             this.log('transport', 'heartbeat timeout. Attempting to re-establish connection');
-            (ref = this.conn) == null ? void 0 : ref.close(_constants.WS_CLOSE_NORMAL, 'hearbeat timeout');
+            (ref = this.conn) === null || ref === void 0 ? void 0 : ref.close(_constants.WS_CLOSE_NORMAL, 'hearbeat timeout');
             return;
         }
         this.pendingHeartbeatRef = this.makeRef();
@@ -317,14 +317,14 @@ let RealtimeClient = class RealtimeClient {
             message: []
         };
         this.endPoint = `${endPoint}/${_constants.TRANSPORTS.websocket}`;
-        if (options == null ? void 0 : options.params) this.params = options.params;
-        if (options == null ? void 0 : options.headers) this.headers = swcHelpers.extends({}, this.headers, options.headers);
-        if (options == null ? void 0 : options.timeout) this.timeout = options.timeout;
-        if (options == null ? void 0 : options.logger) this.logger = options.logger;
-        if (options == null ? void 0 : options.transport) this.transport = options.transport;
-        if (options == null ? void 0 : options.heartbeatIntervalMs) this.heartbeatIntervalMs = options.heartbeatIntervalMs;
-        if (options == null ? void 0 : options.longpollerTimeout) this.longpollerTimeout = options.longpollerTimeout;
-        this.reconnectAfterMs = (options == null ? void 0 : options.reconnectAfterMs) ? options.reconnectAfterMs : (tries)=>{
+        if (options === null || options === void 0 ? void 0 : options.params) this.params = options.params;
+        if (options === null || options === void 0 ? void 0 : options.headers) this.headers = swcHelpers.objectSpread({}, this.headers, options.headers);
+        if (options === null || options === void 0 ? void 0 : options.timeout) this.timeout = options.timeout;
+        if (options === null || options === void 0 ? void 0 : options.logger) this.logger = options.logger;
+        if (options === null || options === void 0 ? void 0 : options.transport) this.transport = options.transport;
+        if (options === null || options === void 0 ? void 0 : options.heartbeatIntervalMs) this.heartbeatIntervalMs = options.heartbeatIntervalMs;
+        if (options === null || options === void 0 ? void 0 : options.longpollerTimeout) this.longpollerTimeout = options.longpollerTimeout;
+        this.reconnectAfterMs = (options === null || options === void 0 ? void 0 : options.reconnectAfterMs) ? options.reconnectAfterMs : (tries)=>{
             return [
                 1000,
                 2000,
@@ -332,10 +332,10 @@ let RealtimeClient = class RealtimeClient {
                 10000
             ][tries - 1] || 10000;
         };
-        this.encode = (options == null ? void 0 : options.encode) ? options.encode : (payload, callback)=>{
+        this.encode = (options === null || options === void 0 ? void 0 : options.encode) ? options.encode : (payload, callback)=>{
             return callback(JSON.stringify(payload));
         };
-        this.decode = (options == null ? void 0 : options.decode) ? options.decode : this.serializer.decode.bind(this.serializer);
+        this.decode = (options === null || options === void 0 ? void 0 : options.decode) ? options.decode : this.serializer.decode.bind(this.serializer);
         this.reconnectTimer = new _timer.default(async ()=>{
             await this.disconnect();
             this.connect();

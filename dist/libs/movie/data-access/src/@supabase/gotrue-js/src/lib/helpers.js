@@ -18,7 +18,7 @@ const isBrowser = ()=>typeof window !== 'undefined'
 exports.isBrowser = isBrowser;
 function getParameterByName(name, url) {
     var ref;
-    if (!url) url = (window == null ? void 0 : (ref = window.location) == null ? void 0 : ref.href) || '';
+    if (!url) url = (window === null || window === void 0 ? void 0 : (ref = window.location) === null || ref === void 0 ? void 0 : ref.href) || '';
     // eslint-disable-next-line no-useless-escape
     name = name.replace(/[\[\]]/g, '\\$&');
     const regex = new RegExp('[?&#]' + name + '(=([^&#]*)|&|#|$)'), results = regex.exec(url);

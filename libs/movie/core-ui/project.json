@@ -38,7 +38,8 @@
       "options": {
         "lintFilePatterns": [
           "libs/movie/core-ui/**/*.{ts,tsx,js,jsx}"
-        ]
+        ],
+        "fix": true
       }
     },
     "test": {

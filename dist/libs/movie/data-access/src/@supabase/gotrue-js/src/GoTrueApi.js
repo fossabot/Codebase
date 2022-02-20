@@ -11,13 +11,13 @@ let GoTrueApi = class GoTrueApi {
    * adds the Authorization token to be used on request methods
    * @param jwt A valid, logged-in JWT.
    */ _createRequestHeaders(jwt) {
-        const headers = swcHelpers.extends({}, this.headers);
+        const headers = swcHelpers.objectSpread({}, this.headers);
         headers['Authorization'] = `Bearer ${jwt}`;
         return headers;
     }
     cookieName() {
         var _name;
-        return (_name = this.cookieOptions.name) != null ? _name : '';
+        return (_name = this.cookieOptions.name) !== null && _name !== void 0 ? _name : '';
     }
     /**
    * Generates the relevant login URL for a third-party provider.
@@ -28,10 +28,10 @@ let GoTrueApi = class GoTrueApi {
         const urlParams = [
             `provider=${encodeURIComponent(provider)}`
         ];
-        if (options == null ? void 0 : options.redirectTo) {
+        if (options === null || options === void 0 ? void 0 : options.redirectTo) {
             urlParams.push(`redirect_to=${encodeURIComponent(options.redirectTo)}`);
         }
-        if (options == null ? void 0 : options.scopes) {
+        if (options === null || options === void 0 ? void 0 : options.scopes) {
             urlParams.push(`scopes=${encodeURIComponent(options.scopes)}`);
         }
         return `${this.url}/authorize?${urlParams.join('&')}`;
@@ -47,7 +47,7 @@ let GoTrueApi = class GoTrueApi {
    * @returns A user if the server has "autoconfirm" OFF
    */ async signUpWithEmail(email, password, options = {}) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             let queryString = '';
             if (options.redirectTo) {
                 queryString = '?redirect_to=' + encodeURIComponent(options.redirectTo);
@@ -62,7 +62,7 @@ let GoTrueApi = class GoTrueApi {
             }, {
                 headers
             });
-            const session = swcHelpers.extends({}, data);
+            const session = swcHelpers.objectSpread({}, data);
             if (session.expires_in) session.expires_at = (0, _helpers).expiresAt(data.expires_in);
             return {
                 data: session,
@@ -82,7 +82,7 @@ let GoTrueApi = class GoTrueApi {
    * @param redirectTo A URL or mobile address to send the user to after they are confirmed.
    */ async signInWithEmail(email, password, options = {}) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             let queryString = '?grant_type=password';
             if (options.redirectTo) {
                 queryString += '&redirect_to=' + encodeURIComponent(options.redirectTo);
@@ -93,7 +93,7 @@ let GoTrueApi = class GoTrueApi {
             }, {
                 headers
             });
-            const session = swcHelpers.extends({}, data);
+            const session = swcHelpers.objectSpread({}, data);
             if (session.expires_in) session.expires_at = (0, _helpers).expiresAt(data.expires_in);
             return {
                 data: session,
@@ -113,7 +113,7 @@ let GoTrueApi = class GoTrueApi {
    * @param data Optional user metadata.
    */ async signUpWithPhone(phone, password, options = {}) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             const data = await (0, _fetch).post(this.fetch, `${this.url}/signup`, {
                 phone,
                 password,
@@ -124,7 +124,7 @@ let GoTrueApi = class GoTrueApi {
             }, {
                 headers
             });
-            const session = swcHelpers.extends({}, data);
+            const session = swcHelpers.objectSpread({}, data);
             if (session.expires_in) session.expires_at = (0, _helpers).expiresAt(data.expires_in);
             return {
                 data: session,
@@ -143,7 +143,7 @@ let GoTrueApi = class GoTrueApi {
    * @param password The password of the user.
    */ async signInWithPhone(phone, password) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             const queryString = '?grant_type=password';
             const data = await (0, _fetch).post(this.fetch, `${this.url}/token${queryString}`, {
                 phone,
@@ -151,7 +151,7 @@ let GoTrueApi = class GoTrueApi {
             }, {
                 headers
             });
-            const session = swcHelpers.extends({}, data);
+            const session = swcHelpers.objectSpread({}, data);
             if (session.expires_in) session.expires_at = (0, _helpers).expiresAt(data.expires_in);
             return {
                 data: session,
@@ -173,7 +173,7 @@ let GoTrueApi = class GoTrueApi {
    * @param issuer The issuer of the user.
    */ async signInWithOpenIDConnect({ id_token , nonce , client_id , issuer , provider  }) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             const queryString = '?grant_type=id_token';
             const data = await (0, _fetch).post(this.fetch, `${this.url}/token${queryString}`, {
                 id_token,
@@ -184,7 +184,7 @@ let GoTrueApi = class GoTrueApi {
             }, {
                 headers
             });
-            const session = swcHelpers.extends({}, data);
+            const session = swcHelpers.objectSpread({}, data);
             if (session.expires_in) session.expires_at = (0, _helpers).expiresAt(data.expires_in);
             return {
                 data: session,
@@ -203,7 +203,7 @@ let GoTrueApi = class GoTrueApi {
    * @param redirectTo A URL or mobile address to send the user to after they are confirmed.
    */ async sendMagicLinkEmail(email, options = {}) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             let queryString = '';
             if (options.redirectTo) {
                 queryString += '?redirect_to=' + encodeURIComponent(options.redirectTo);
@@ -232,7 +232,7 @@ let GoTrueApi = class GoTrueApi {
    * @param phone The user's phone number WITH international prefix
    */ async sendMobileOTP(phone, options = {}) {
         try {
-            let headers = swcHelpers.extends({}, this.headers);
+            let headers = swcHelpers.objectSpread({}, this.headers);
             const data = await (0, _fetch).post(this.fetch, `${this.url}/otp`, {
                 phone,
                 gotrue_meta_security: {
@@ -277,7 +277,7 @@ let GoTrueApi = class GoTrueApi {
    * @param redirectTo A URL or mobile address to send the user to after they are confirmed.
    */ async verifyMobileOTP(phone, token, options = {}) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             const data = await (0, _fetch).post(this.fetch, `${this.url}/verify`, {
                 phone,
                 token,
@@ -304,7 +304,7 @@ let GoTrueApi = class GoTrueApi {
    * @param data Optional user metadata
    */ async inviteUserByEmail(email, options = {}) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             let queryString = '';
             if (options.redirectTo) {
                 queryString += '?redirect_to=' + encodeURIComponent(options.redirectTo);
@@ -332,7 +332,7 @@ let GoTrueApi = class GoTrueApi {
    * @param redirectTo A URL or mobile address to send the user to after they are confirmed.
    */ async resetPasswordForEmail(email, options = {}) {
         try {
-            const headers = swcHelpers.extends({}, this.headers);
+            const headers = swcHelpers.objectSpread({}, this.headers);
             let queryString = '';
             if (options.redirectTo) {
                 queryString += '?redirect_to=' + encodeURIComponent(options.redirectTo);
@@ -366,7 +366,7 @@ let GoTrueApi = class GoTrueApi {
             }, {
                 headers: this.headers
             });
-            const session = swcHelpers.extends({}, data);
+            const session = swcHelpers.objectSpread({}, data);
             if (session.expires_in) session.expires_at = (0, _helpers).expiresAt(data.expires_in);
             return {
                 data: session,
@@ -407,7 +407,7 @@ let GoTrueApi = class GoTrueApi {
                     name: `${this.cookieName()}-${token.key}`,
                     value: token.value,
                     domain: this.cookieOptions.domain,
-                    maxAge: (_lifetime = this.cookieOptions.lifetime) != null ? _lifetime : 0,
+                    maxAge: (_lifetime = this.cookieOptions.lifetime) !== null && _lifetime !== void 0 ? _lifetime : 0,
                     path: this.cookieOptions.path,
                     sameSite: this.cookieOptions.sameSite
                 })
@@ -471,7 +471,7 @@ let GoTrueApi = class GoTrueApi {
                     name: `${this.cookieName()}-${token.key}`,
                     value: token.value,
                     domain: this.cookieOptions.domain,
-                    maxAge: (_lifetime = this.cookieOptions.lifetime) != null ? _lifetime : 0,
+                    maxAge: (_lifetime = this.cookieOptions.lifetime) !== null && _lifetime !== void 0 ? _lifetime : 0,
                     path: this.cookieOptions.path,
                     sameSite: this.cookieOptions.sameSite
                 })
@@ -621,7 +621,7 @@ let GoTrueApi = class GoTrueApi {
                             name: `${this.cookieName()}-${token.key}`,
                             value: token.value,
                             domain: this.cookieOptions.domain,
-                            maxAge: (_lifetime = this.cookieOptions.lifetime) != null ? _lifetime : 0,
+                            maxAge: (_lifetime = this.cookieOptions.lifetime) !== null && _lifetime !== void 0 ? _lifetime : 0,
                             path: this.cookieOptions.path,
                             sameSite: this.cookieOptions.sameSite
                         })
@@ -750,7 +750,7 @@ let GoTrueApi = class GoTrueApi {
     constructor({ url ='' , headers ={} , cookieOptions , fetch  }){
         this.url = url;
         this.headers = headers;
-        this.cookieOptions = swcHelpers.extends({}, _constants.COOKIE_OPTIONS, cookieOptions);
+        this.cookieOptions = swcHelpers.objectSpread({}, _constants.COOKIE_OPTIONS, cookieOptions);
         this.fetch = fetch;
     }
 };

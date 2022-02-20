@@ -51,7 +51,7 @@ let PostgrestClient = class PostgrestClient {
    * @param schema  Postgres schema to switch to.
    */ constructor(url, { headers ={} , schema , fetch  } = {}){
         this.url = url;
-        this.headers = swcHelpers.extends({}, _constants.DEFAULT_HEADERS, headers);
+        this.headers = swcHelpers.objectSpread({}, _constants.DEFAULT_HEADERS, headers);
         this.schema = schema;
         this.fetch = fetch;
     }

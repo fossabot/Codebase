@@ -26,12 +26,12 @@ let Push = class Push {
         });
     }
     updatePayload(payload) {
-        this.payload = swcHelpers.extends({}, this.payload, payload);
+        this.payload = swcHelpers.objectSpread({}, this.payload, payload);
     }
     receive(status, callback) {
         if (this._hasReceived(status)) {
             var ref;
-            callback((ref = this.receivedResp) == null ? void 0 : ref.response);
+            callback((ref = this.receivedResp) === null || ref === void 0 ? void 0 : ref.response);
         }
         this.recHooks.push({
             status,

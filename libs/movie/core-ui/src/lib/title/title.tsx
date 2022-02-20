@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface Inputs {
   size?: string;
-  children: any;
+  children: unkown;
 }
 
 export const Title = styled(motion.h1)`

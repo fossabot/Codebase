@@ -135,7 +135,7 @@ let StorageBucketApi = class StorageBucketApi {
     }
     constructor(url, headers = {}, fetch){
         this.url = url;
-        this.headers = swcHelpers.extends({}, _constants.DEFAULT_HEADERS, headers);
+        this.headers = swcHelpers.objectSpread({}, _constants.DEFAULT_HEADERS, headers);
         this.fetch = fetch;
     }
 };

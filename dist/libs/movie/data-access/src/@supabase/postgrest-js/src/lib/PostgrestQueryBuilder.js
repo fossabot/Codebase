@@ -130,7 +130,7 @@ let PostgrestQueryBuilder = class PostgrestQueryBuilder extends _types.Postgrest
             fetch
         });
         this.url = new URL(url);
-        this.headers = swcHelpers.extends({}, headers);
+        this.headers = swcHelpers.objectSpread({}, headers);
         this.schema = schema;
     }
 };

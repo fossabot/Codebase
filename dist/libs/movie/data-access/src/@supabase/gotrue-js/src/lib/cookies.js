@@ -93,9 +93,9 @@ exports.deleteCookie = deleteCookie;
         expires: new Date(Date.now() + cookie.maxAge * 1000),
         httpOnly: true,
         secure,
-        path: (_path = cookie.path) != null ? _path : '/',
-        domain: (_domain = cookie.domain) != null ? _domain : '',
-        sameSite: (_sameSite = cookie.sameSite) != null ? _sameSite : 'lax'
+        path: (_path = cookie.path) !== null && _path !== void 0 ? _path : '/',
+        domain: (_domain = cookie.domain) !== null && _domain !== void 0 ? _domain : '',
+        sameSite: (_sameSite = cookie.sameSite) !== null && _sameSite !== void 0 ? _sameSite : 'lax'
     });
 }
 function getCookieString(req, res, cookies) {

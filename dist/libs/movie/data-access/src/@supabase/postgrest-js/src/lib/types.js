@@ -36,7 +36,7 @@ let PostgrestBuilder = class PostgrestBuilder {
             let count = null;
             if (res.ok) {
                 var ref, ref1, ref2;
-                const isReturnMinimal = (ref = this.headers['Prefer']) == null ? void 0 : ref.split(',').includes('return=minimal');
+                const isReturnMinimal = (ref = this.headers['Prefer']) === null || ref === void 0 ? void 0 : ref.split(',').includes('return=minimal');
                 if (this.method !== 'HEAD' && !isReturnMinimal) {
                     const text = await res.text();
                     if (!text) {
@@ -47,8 +47,8 @@ let PostgrestBuilder = class PostgrestBuilder {
                         data = JSON.parse(text);
                     }
                 }
-                const countHeader = (ref1 = this.headers['Prefer']) == null ? void 0 : ref1.match(/count=(exact|planned|estimated)/);
-                const contentRange = (ref2 = res.headers.get('content-range')) == null ? void 0 : ref2.split('/');
+                const countHeader = (ref1 = this.headers['Prefer']) === null || ref1 === void 0 ? void 0 : ref1.match(/count=(exact|planned|estimated)/);
+                const contentRange = (ref2 = res.headers.get('content-range')) === null || ref2 === void 0 ? void 0 : ref2.split('/');
                 if (countHeader && contentRange && contentRange.length > 1) {
                     count = parseInt(contentRange[1]);
                 }

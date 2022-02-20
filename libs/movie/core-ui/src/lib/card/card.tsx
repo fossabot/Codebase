@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 /* eslint-disable-next-line */
 export interface CardProps {
@@ -30,7 +30,7 @@ export const Card = styled.div`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme, hoverColor = false }: any) =>
+    background-color: ${({ theme, hoverColor = false }: unkown) =>
       theme.background.third};
   }
 `;

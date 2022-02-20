@@ -122,7 +122,7 @@ let SupabaseClient = class SupabaseClient {
         };
         return new _supabaseAuthClient.SupabaseAuthClient({
             url: this.authUrl,
-            headers: swcHelpers.extends({}, headers, authHeaders),
+            headers: swcHelpers.objectSpread({}, headers, authHeaders),
             autoRefreshToken,
             persistSession,
             detectSessionInUrl,
@@ -131,8 +131,8 @@ let SupabaseClient = class SupabaseClient {
         });
     }
     _initRealtimeClient(options) {
-        return new _realtimeJs.RealtimeClient(this.realtimeUrl, swcHelpers.extends({}, options, {
-            params: swcHelpers.extends({}, options == null ? void 0 : options.params, {
+        return new _realtimeJs.RealtimeClient(this.realtimeUrl, swcHelpers.objectSpread({}, options, {
+            params: swcHelpers.objectSpread({}, options === null || options === void 0 ? void 0 : options.params, {
                 apikey: this.supabaseKey
             })
         }));
@@ -148,23 +148,23 @@ let SupabaseClient = class SupabaseClient {
         var ref;
         const headers = this.headers;
         var ref1;
-        const authBearer = (ref1 = (ref = this.auth.session()) == null ? void 0 : ref.access_token) != null ? ref1 : this.supabaseKey;
+        const authBearer = (ref1 = (ref = this.auth.session()) === null || ref === void 0 ? void 0 : ref.access_token) !== null && ref1 !== void 0 ? ref1 : this.supabaseKey;
         headers['apikey'] = this.supabaseKey;
         headers['Authorization'] = `Bearer ${authBearer}`;
         return headers;
     }
     _listenForMultiTabEvents() {
-        if (!this.multiTab || !(0, _helpers).isBrowser() || !(window == null ? void 0 : window.addEventListener)) {
+        if (!this.multiTab || !(0, _helpers).isBrowser() || !(window === null || window === void 0 ? void 0 : window.addEventListener)) {
             return null;
         }
         try {
-            return window == null ? void 0 : window.addEventListener('storage', (e)=>{
+            return window === null || window === void 0 ? void 0 : window.addEventListener('storage', (e)=>{
                 if (e.key === _constants.STORAGE_KEY) {
                     var ref, ref2;
                     const newSession = JSON.parse(String(e.newValue));
                     var ref3;
-                    const accessToken = (ref3 = newSession == null ? void 0 : (ref = newSession.currentSession) == null ? void 0 : ref.access_token) != null ? ref3 : undefined;
-                    const previousAccessToken = (ref2 = this.auth.session()) == null ? void 0 : ref2.access_token;
+                    const accessToken = (ref3 = newSession === null || newSession === void 0 ? void 0 : (ref = newSession.currentSession) === null || ref === void 0 ? void 0 : ref.access_token) !== null && ref3 !== void 0 ? ref3 : undefined;
+                    const previousAccessToken = (ref2 = this.auth.session()) === null || ref2 === void 0 ? void 0 : ref2.access_token;
                     if (!accessToken) {
                         this._handleTokenChanged('SIGNED_OUT', accessToken, 'STORAGE');
                     } else if (!previousAccessToken && accessToken) {
@@ -181,7 +181,7 @@ let SupabaseClient = class SupabaseClient {
     }
     _listenForAuthEvents() {
         let { data  } = this.auth.onAuthStateChange((event, session)=>{
-            this._handleTokenChanged(event, session == null ? void 0 : session.access_token, 'CLIENT');
+            this._handleTokenChanged(event, session === null || session === void 0 ? void 0 : session.access_token, 'CLIENT');
         });
         return data;
     }
@@ -217,7 +217,7 @@ let SupabaseClient = class SupabaseClient {
         if (!supabaseUrl) throw new Error('supabaseUrl is required.');
         if (!supabaseKey) throw new Error('supabaseKey is required.');
         const _supabaseUrl = (0, _helpers).stripTrailingSlash(supabaseUrl);
-        const settings = swcHelpers.extends({}, DEFAULT_OPTIONS, options);
+        const settings = swcHelpers.objectSpread({}, DEFAULT_OPTIONS, options);
         this.restUrl = `${_supabaseUrl}/rest/v1`;
         this.realtimeUrl = `${_supabaseUrl}/realtime/v1`.replace('http', 'ws');
         this.authUrl = `${_supabaseUrl}/auth/v1`;
@@ -225,9 +225,9 @@ let SupabaseClient = class SupabaseClient {
         this.schema = settings.schema;
         this.multiTab = settings.multiTab;
         this.fetch = settings.fetch;
-        this.headers = swcHelpers.extends({}, _constants.DEFAULT_HEADERS, options == null ? void 0 : options.headers);
+        this.headers = swcHelpers.objectSpread({}, _constants.DEFAULT_HEADERS, options === null || options === void 0 ? void 0 : options.headers);
         this.auth = this._initSupabaseAuthClient(settings);
-        this.realtime = this._initRealtimeClient(swcHelpers.extends({
+        this.realtime = this._initRealtimeClient(swcHelpers.objectSpread({
             headers: this.headers
         }, settings.realtime));
         this._listenForAuthEvents();

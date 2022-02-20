@@ -29,8 +29,8 @@ let StorageFileApi = class StorageFileApi {
    */ async uploadOrUpdate(method, path, fileBody, fileOptions) {
         try {
             let body;
-            const options = swcHelpers.extends({}, DEFAULT_FILE_OPTIONS, fileOptions);
-            const headers = swcHelpers.extends({}, this.headers, method === 'POST' && {
+            const options = swcHelpers.objectSpread({}, DEFAULT_FILE_OPTIONS, fileOptions);
+            const headers = swcHelpers.objectSpread({}, this.headers, method === 'POST' && {
                 'x-upsert': String(options.upsert)
             });
             if (typeof Blob !== 'undefined' && fileBody instanceof Blob) {
@@ -256,7 +256,7 @@ let StorageFileApi = class StorageFileApi {
    * @param parameters Fetch parameters, currently only supports `signal`, which is an AbortController's signal
    */ async list(path, options, parameters) {
         try {
-            const body = swcHelpers.extends({}, DEFAULT_SEARCH_OPTIONS, options, {
+            const body = swcHelpers.objectSpread({}, DEFAULT_SEARCH_OPTIONS, options, {
                 prefix: path || ''
             });
             const data = await (0, _fetch).post(this.fetch, `${this.url}/object/list/${this.bucketId}`, body, {

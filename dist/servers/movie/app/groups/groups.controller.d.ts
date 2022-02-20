@@ -2,7 +2,11 @@ import { GroupsService } from './groups.service';
 export declare class GroupsController {
     private readonly group;
     constructor(group: GroupsService);
-    getAllGroups(req: any): Promise<{
+    getAllGroups(req: {
+        user: {
+            id: string;
+        };
+    }): Promise<{
         id: string;
         name: string;
     }[]>;
@@ -13,5 +17,9 @@ export declare class GroupsController {
         };
         movie: import(".prisma/client").Movie[];
     }>;
-    createGroup(name: any, req: any): Promise<import(".prisma/client").Group>;
+    createGroup(name: string, req: {
+        user: {
+            id: string;
+        };
+    }): Promise<import(".prisma/client").Group>;
 }

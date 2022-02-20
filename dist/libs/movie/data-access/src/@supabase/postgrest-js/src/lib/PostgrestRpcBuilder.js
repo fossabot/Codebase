@@ -29,7 +29,7 @@ let PostgrestRpcBuilder = class PostgrestRpcBuilder extends _types.PostgrestBuil
             fetch
         });
         this.url = new URL(url);
-        this.headers = swcHelpers.extends({}, headers);
+        this.headers = swcHelpers.objectSpread({}, headers);
         this.schema = schema;
     }
 };

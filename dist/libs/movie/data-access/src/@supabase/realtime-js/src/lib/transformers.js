@@ -30,7 +30,7 @@ exports.PostgresTypes = PostgresTypes;
 })(PostgresTypes || (exports.PostgresTypes = PostgresTypes = {}));
 const convertChangeData = (columns, record, options = {})=>{
     var _skipTypes;
-    const skipTypes = (_skipTypes = options.skipTypes) != null ? _skipTypes : [];
+    const skipTypes = (_skipTypes = options.skipTypes) !== null && _skipTypes !== void 0 ? _skipTypes : [];
     return Object.keys(record).reduce((acc, rec_key)=>{
         acc[rec_key] = convertColumn(rec_key, columns, record, skipTypes);
         return acc;
@@ -40,7 +40,7 @@ exports.convertChangeData = convertChangeData;
 const convertColumn = (columnName, columns, record, skipTypes)=>{
     const column = columns.find((x)=>x.name === columnName
     );
-    const colType = column == null ? void 0 : column.type;
+    const colType = column === null || column === void 0 ? void 0 : column.type;
     const value = record[columnName];
     if (colType && !skipTypes.includes(colType)) {
         return convertCell(colType, value);

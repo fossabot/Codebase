@@ -64,7 +64,7 @@ export function SignUpButton(props: AuthModalProps) {
     }
   }, [email, password]);
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: unkown) => {
     const { email, password } = data;
     console.log(email, password);
     try {

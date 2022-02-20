@@ -9,7 +9,7 @@ export default function CreateGroup() {
     handleSubmit,
   } = useForm();
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: unkown) => {
     const user = await getUser();
     console.log(user);
     console.log(await createGroup(data.groupName));

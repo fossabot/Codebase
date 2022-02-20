@@ -191,7 +191,7 @@ let GoTrueClient = class GoTrueClient {
    */ async refreshSession() {
         try {
             var ref1;
-            if (!((ref1 = this.currentSession) == null ? void 0 : ref1.access_token)) throw new Error('Not logged in.');
+            if (!((ref1 = this.currentSession) === null || ref1 === void 0 ? void 0 : ref1.access_token)) throw new Error('Not logged in.');
             // currentSession and currentUser will be updated to latest on _callRefreshToken
             const { error  } = await this._callRefreshToken();
             if (error) throw error;
@@ -213,11 +213,11 @@ let GoTrueClient = class GoTrueClient {
    */ async update(attributes) {
         try {
             var ref2;
-            if (!((ref2 = this.currentSession) == null ? void 0 : ref2.access_token)) throw new Error('Not logged in.');
+            if (!((ref2 = this.currentSession) === null || ref2 === void 0 ? void 0 : ref2.access_token)) throw new Error('Not logged in.');
             const { user , error  } = await this.api.updateUser(this.currentSession.access_token, attributes);
             if (error) throw error;
             if (!user) throw Error('Invalid user data.');
-            const session = swcHelpers.extends({}, this.currentSession, {
+            const session = swcHelpers.objectSpread({}, this.currentSession, {
                 user
             });
             this._saveSession(session);
@@ -267,7 +267,7 @@ let GoTrueClient = class GoTrueClient {
    * Overrides the JWT on the current client. The JWT will then be sent in all subsequent network requests.
    * @param access_token a jwt access token
    */ setAuth(access_token) {
-        this.currentSession = swcHelpers.extends({}, this.currentSession, {
+        this.currentSession = swcHelpers.objectSpread({}, this.currentSession, {
             access_token,
             token_type: 'bearer',
             user: null
@@ -304,7 +304,7 @@ let GoTrueClient = class GoTrueClient {
                 token_type,
                 user: user
             };
-            if (options == null ? void 0 : options.storeSession) {
+            if (options === null || options === void 0 ? void 0 : options.storeSession) {
                 this._saveSession(session);
                 const recoveryMode = (0, _helpers).getParameterByName('type');
                 this._notifyAllSubscribers('SIGNED_IN');
@@ -332,7 +332,7 @@ let GoTrueClient = class GoTrueClient {
    * For server-side management, you can disable sessions by passing a JWT through to `auth.api.signOut(JWT: string)`
    */ async signOut() {
         var ref3;
-        const accessToken = (ref3 = this.currentSession) == null ? void 0 : ref3.access_token;
+        const accessToken = (ref3 = this.currentSession) === null || ref3 === void 0 ? void 0 : ref3.access_token;
         this._removeSession();
         this._notifyAllSubscribers('SIGNED_OUT');
         if (accessToken) {
@@ -382,7 +382,7 @@ let GoTrueClient = class GoTrueClient {
                 session: null,
                 error
             };
-            if ((data == null ? void 0 : (ref5 = data.user) == null ? void 0 : ref5.confirmed_at) || (data == null ? void 0 : (ref4 = data.user) == null ? void 0 : ref4.email_confirmed_at)) {
+            if ((data === null || data === void 0 ? void 0 : (ref5 = data.user) === null || ref5 === void 0 ? void 0 : ref5.confirmed_at) || (data === null || data === void 0 ? void 0 : (ref4 = data.user) === null || ref4 === void 0 ? void 0 : ref4.email_confirmed_at)) {
                 this._saveSession(data);
                 this._notifyAllSubscribers('SIGNED_IN');
             }
@@ -411,7 +411,7 @@ let GoTrueClient = class GoTrueClient {
                 session: null,
                 error
             };
-            if (data == null ? void 0 : (ref6 = data.user) == null ? void 0 : ref6.phone_confirmed_at) {
+            if (data === null || data === void 0 ? void 0 : (ref6 = data.user) === null || ref6 === void 0 ? void 0 : ref6.phone_confirmed_at) {
                 this._saveSession(data);
                 this._notifyAllSubscribers('SIGNED_IN');
             }
@@ -504,14 +504,14 @@ let GoTrueClient = class GoTrueClient {
    */ _recoverSession() {
         try {
             var ref7;
-            const json = (0, _helpers).isBrowser() && ((ref7 = this.localStorage) == null ? void 0 : ref7.getItem(_constants.STORAGE_KEY));
+            const json = (0, _helpers).isBrowser() && ((ref7 = this.localStorage) === null || ref7 === void 0 ? void 0 : ref7.getItem(_constants.STORAGE_KEY));
             if (!json || typeof json !== 'string') {
                 return null;
             }
             const data = JSON.parse(json);
             const { currentSession , expiresAt  } = data;
             const timeNow = Math.round(Date.now() / 1000);
-            if (expiresAt >= timeNow && (currentSession == null ? void 0 : currentSession.user)) {
+            if (expiresAt >= timeNow && (currentSession === null || currentSession === void 0 ? void 0 : currentSession.user)) {
                 this._saveSession(currentSession);
                 this._notifyAllSubscribers('SIGNED_IN');
             }
@@ -555,7 +555,7 @@ let GoTrueClient = class GoTrueClient {
             return null;
         }
     }
-    async _callRefreshToken(refresh_token = (ref = this.currentSession) == null ? void 0 : ref.refresh_token) {
+    async _callRefreshToken(refresh_token = (ref = this.currentSession) === null || ref === void 0 ? void 0 : ref.refresh_token) {
         try {
             if (!refresh_token) {
                 throw new Error('No current session.');
@@ -626,16 +626,16 @@ let GoTrueClient = class GoTrueClient {
     /**
    * Listens for changes to LocalStorage and updates the current session.
    */ _listenForMultiTabEvents() {
-        if (!this.multiTab || !(0, _helpers).isBrowser() || !(window == null ? void 0 : window.addEventListener)) {
+        if (!this.multiTab || !(0, _helpers).isBrowser() || !(window === null || window === void 0 ? void 0 : window.addEventListener)) {
             // console.debug('Auth multi-tab support is disabled.')
             return false;
         }
         try {
-            window == null ? void 0 : window.addEventListener('storage', (e)=>{
+            window === null || window === void 0 ? void 0 : window.addEventListener('storage', (e)=>{
                 if (e.key === _constants.STORAGE_KEY) {
                     var ref;
                     const newSession = JSON.parse(String(e.newValue));
-                    if (newSession == null ? void 0 : (ref = newSession.currentSession) == null ? void 0 : ref.access_token) {
+                    if (newSession === null || newSession === void 0 ? void 0 : (ref = newSession.currentSession) === null || ref === void 0 ? void 0 : ref.access_token) {
                         this._recoverAndRefresh();
                         this._notifyAllSubscribers('SIGNED_IN');
                     } else {
@@ -661,7 +661,7 @@ let GoTrueClient = class GoTrueClient {
    * @param options.fetch A custom fetch implementation.
    */ constructor(options){
         this.stateChangeEmitters = new Map();
-        const settings = swcHelpers.extends({}, DEFAULT_OPTIONS, options);
+        const settings = swcHelpers.objectSpread({}, DEFAULT_OPTIONS, options);
         this.currentUser = null;
         this.currentSession = null;
         this.autoRefreshToken = settings.autoRefreshToken;

@@ -8,7 +8,7 @@
     "movie-feature-app": "libs/movie/feature-app",
     "movie-feature-data-access": "libs/movie/data-access",
     "movie-feature-public": "libs/movie/feature-public",
-    "movie-shell": "libs/movie/shell",
-    "movie-server": "servers/movie"
+    "movie-server": "servers/movie",
+    "movie-shell": "libs/movie/shell"
   }
 }
