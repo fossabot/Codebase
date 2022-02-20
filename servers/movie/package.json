@@ -34,7 +34,9 @@
     "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-config-prettier": "^8.3.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^8.0.0",
@@ -50,8 +52,6 @@
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.2.5",
     "prettier": "^2.3.2",
     "prettier-linter-helpers": "^1.0.0",
