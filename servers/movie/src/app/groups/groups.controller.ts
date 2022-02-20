@@ -8,12 +8,12 @@ export class GroupsController {
   constructor(private readonly group: GroupsService) {}
 
   // @Get()
-  // async getUserGroup(@Req() req: any) {
+  // async getUserGroup(@Req() req: unkown) {
   //   const data = await this;
   // }
 
   @Get('all')
-  async getAllGroups(@Req() req: any) {
+  async getAllGroups(@Req() req: { user: { id: string } }) {
     return await this.group.getAll(req.user.id);
   }
 
@@ -23,7 +23,10 @@ export class GroupsController {
   }
 
   @Post()
-  async createGroup(@Query('name') name: any, @Req() req: any) {
+  async createGroup(
+    @Query('name') name: string,
+    @Req() req: { user: { id: string } },
+  ) {
     return await this.group.createGroup(name, req.user?.id);
   }
 }

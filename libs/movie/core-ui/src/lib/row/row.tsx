@@ -1,30 +1,21 @@
+import styled, { css } from "styled-components";
 
-
-
-
-
-  import styled from 'styled-components';
-  
-
-/* eslint-disable-next-line */
-export interface RowProps {
+interface Inputs {
+  gap?: string;
+  far?: boolean;
 }
 
-
-const StyledRow = styled.div`
-  color: pink;
+export const Row = styled.div`
+  display: flex;
+  flex-direction: column;
+  ${({ gap, far }: Inputs) => {
+    if (far) {
+      return css`
+        justify-content: space-between;
+      `;
+    }
+    return css`
+      gap: ${gap}rem;
+    `;
+  }}
 `;
-
-
-export function Row(props: RowProps) {
-  return (
-    <StyledRow>
-      
-      <h1>Welcome to Row!</h1>
-      
-    </StyledRow>
-  );
-};
-
-
-export default Row;

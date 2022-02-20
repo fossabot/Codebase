@@ -2,6 +2,12 @@
   "name": "@projects/libs-movie-feature-app",
   "version": "0.0.1",
   "dependencies": {
-    "react-hook-form": "^7.27.1"
+    "@tanstack/react-location": "^3.6.1",
+    "framer-motion": "^6.2.6",
+    "react-hook-form": "^7.27.1",
+    "react-scroll": "^1.8.5"
+  },
+  "devDependencies": {
+    "@types/react-scroll": "^1.8.3"
   }
 }

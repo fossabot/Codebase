@@ -8,8 +8,10 @@ import MovieCard from "../../components/movie-card/movie-card";
 /* eslint-disable-next-line */
 export interface HomeProps {}
 
-const StyledHome = styled.div`
-  color: pink;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
 `;
 
 export function GroupHome(props: HomeProps) {
@@ -34,12 +36,13 @@ export function GroupHome(props: HomeProps) {
   }, [id]);
 
   return (
-    <StyledHome>
+    <>
       <Navbar group={group} />
-      {JSON.stringify(group)} <br></br>
-      {(movies || []).map((movie: any, index: number) => (
-        <MovieCard movie={movie} key={index}/>
-      ))}
-    </StyledHome>
+      <Grid>
+        {(movies || []).map((movie: unknown, index: number) => (
+          <MovieCard movie={movie} key={index} />
+        ))}
+      </Grid>
+    </>
   );
 }

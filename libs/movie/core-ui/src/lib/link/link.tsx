@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Link as RLink } from "@tanstack/react-location";
+import { ReactNode } from "react";
 
 export interface LinkProps {
-  children: any;
+  children: ReactNode;
   to?: string;
   onClick?: () => void;
 }

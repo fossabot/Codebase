@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { ContainedButton } from "./variants/contained";
 import { OutlinedButton } from "./variants/outlined";
 import { TextButton } from "./variants/text";
@@ -6,22 +7,11 @@ export interface Props {
   shadow?: `${string}px`;
   size?: string;
   variant?: "outlined" | "text" | "contained";
-  onClick?: (e: any) => void;
-  children: any;
-  [key: string]: any;
+  onClick?: (e: Record<string, unknown>) => void;
+  children: ReactNode;
+  [key: string]: unknown;
 }
 
-/**
-  Text color: `--text-color`
-
-  Background color: `--bg-color`
-
-  Secondary background color: `--bg-secondary-color`
-
-  Background hover color: `--bg-color--hover`
-  
-  Background secondary hover color: `--bg-secondary-color--hover`
-*/
 export function Button({ variant = "contained", children, ...props }: Props) {
   switch (variant) {
     case "text":

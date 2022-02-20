@@ -1,1 +1,0 @@
-{"version":3,"file":"prisma.service.js","sourceRoot":"","sources":["../../../../../servers/movie/src/app/prisma/prisma.service.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAA4C;AAC5C,2CAA8C;AAG9C,IAAa,aAAa,GAA1B,MAAa,aAAc,SAAQ,qBAAY;CAAG,CAAA;AAArC,aAAa;IADzB,IAAA,mBAAU,GAAE;GACA,aAAa,CAAwB;AAArC,sCAAa"}

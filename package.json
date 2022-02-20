@@ -1,5 +1,6 @@
 {
   "name": "root",
+  "version": "0.0.0",
   "private": true,
   "devDependencies": {
     "@nestjs/schematics": "^8.0.0",
@@ -45,10 +46,9 @@
     "react-test-renderer": "17.0.2",
     "swc-loader": "0.1.15",
     "ts-jest": "27.0.5",
-    "typescript": "4.2.4"
+    "typescript": "4.5.5"
   },
   "workspaces": [
-    "apps/*",
     "packages/*",
     "servers/*"
   ],
@@ -56,7 +56,6 @@
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
-    "@tanstack/react-location": "^3.6.1",
     "core-js": "^3.6.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",

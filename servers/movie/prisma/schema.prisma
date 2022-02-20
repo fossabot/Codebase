@@ -71,7 +71,7 @@ model Movie {
   backdrop_path String
   poster_path String
   release_date String
-  movie_id String
+  movie_id Int
   adult Boolean
 
   @@unique([movie_id, groupId])
