@@ -1,33 +1,22 @@
 import { ApiMovieModel, DBGroupModel } from "../../types";
 import { getClient } from "../../utils";
-import axios from "axios";
+import axios, { Axios } from "axios";
 const sbClient = getClient();
 
 export const addMovieToGroup = async (
   movie: ApiMovieModel,
   groupId: DBGroupModel["id"]
 ) => {
-  const { data, error } = await sbClient
-    .from("movies")
-    .select()
-    .eq("movie_id", movie["id"])
-    .eq("group_id", groupId);
-  if (!data?.length) {
-    const insert = {
-      backdrop_path: movie.backdrop_path,
-      title: movie.title,
-      overview: movie.overview,
-      group_id: groupId,
-      poster_path: movie.poster_path,
-      release_date: movie.release_date,
-      movie_id: movie.id,
-      adult: movie.adult,
-    };
-
-    const { data, error } = await sbClient.from("movies").insert(insert);
-    if (error) console.log(error);
-    return [data, error];
-  } else return [null, null];
+  try {
+    const id = movie.id;
+    const { data: result } = await axios.post(`/api/groups/${groupId}/movies`, {
+      ...movie,
+      movie_id: id,
+    });
+    return [{}, null];
+  } catch (e) {
+    return [null, e];
+  }
 };
 
 export const getGroupFromId = async (groupId: string) => {
@@ -35,7 +24,7 @@ export const getGroupFromId = async (groupId: string) => {
   return group;
 };
 
-export const getGroupIcon = (group: DBGroupModel): any => {
+export const getGroupIcon = (group: DBGroupModel): unkown => {
   if (group.group_icon) {
     const [bucket, ...pathArr] = group.group_icon.split("/");
     const path = pathArr.join("/");
