@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../../../../libs/movie/data-access/node_modules/yaeti/lib/Event.browser.js"],"sourcesContent":["/**\n * In browsers export the native Event interface.\n */\n\nmodule.exports = global.Event;\n"],"names":["module","exports","global","Event"],"mappings":";AAAA,EAEG,AAFH;;CAEG,AAFH,EAEG,CAEHA,MAAM,CAACC,OAAO,GAAGC,MAAM,CAACC,KAAK"}

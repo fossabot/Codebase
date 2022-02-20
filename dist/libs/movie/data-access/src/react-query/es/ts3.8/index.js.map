@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../../../../../libs/movie/data-access/node_modules/react-query/es/ts3.8/index.js"],"sourcesContent":["import { useQueries } from './useQueries';\nexport { useQueries };\nexport * from '..';"],"names":["useQueries"],"mappings":";+BACSA,CAAU;;;eAAVA,WAAU;;;;;;AADQ,GAAc,CAAd,WAAc"}

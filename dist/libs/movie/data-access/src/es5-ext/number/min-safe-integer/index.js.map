@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../../../../../../libs/movie/data-access/node_modules/es5-ext/number/min-safe-integer/index.js"],"sourcesContent":["\"use strict\";\n\nmodule.exports = -(Math.pow(2, 53) - 1);\n"],"names":["module","exports","Math","pow"],"mappings":"AAAA,CAAY;AAEZA,MAAM,CAACC,OAAO,KAAKC,IAAI,CAACC,GAAG,CAAC,CAAC,EAAE,EAAE,IAAI,CAAC"}
