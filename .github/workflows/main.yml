@@ -38,4 +38,4 @@ jobs:
       - run: npm ci
       - run: npm run nx -- affected:lint --parallel --max-parallel=3
       - run: npm run nx -- affected:build --parallel --max-parallel=3
-      - name: Enable Github Automerge
+
