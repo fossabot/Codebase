@@ -28,16 +28,16 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: "14"
-      - run: npm ci
-      - run: npm run nx -- affected:lint --parallel --max-parallel=3
-      - run: npm run nx -- affected:build --parallel --max-parallel=3
+        - uses: actions/checkout@v2
+          with:
+            ref: ${{ github.event.pull_request.head.ref }}
+            fetch-depth: 0
+          uses: nrwl/nx-set-shas@v2
+        - uses: actions/setup-node@v1
+          with:
+            node-version: "14"
+        - run: npm ci
+        - run: npm run nx -- affected:lint --parallel --max-parallel=3
+        - run: npm run nx -- affected:build --parallel --max-parallel=3
       - name: Enable Github Automerge
-      - uses: alexwilson/enable-github-automerge-action@1.0.0
+        - uses: alexwilson/enable-github-automerge-action@1.0.0
