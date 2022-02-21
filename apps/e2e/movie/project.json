@@ -1,12 +1,12 @@
 {
-  "root": "apps/movie-e2e",
-  "sourceRoot": "apps/movie-e2e/src",
+  "root": "apps/e2e/movie",
+  "sourceRoot": "apps/e2e/movie/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/movie-e2e/cypress.json",
+        "cypressConfig": "apps/e2e/movie/cypress.json",
         "devServerTarget": "movie:serve"
       },
       "configurations": {
@@ -22,7 +22,7 @@
       ],
       "options": {
         "lintFilePatterns": [
-          "apps/movie-e2e/**/*.{js,ts}"
+          "apps/e2e/movie/**/*.{js,ts}"
         ]
       }
     },
