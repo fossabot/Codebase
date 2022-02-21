@@ -1,10 +1,10 @@
 {
   "version": 2,
   "projects": {
+    "e2e-movie": "apps/e2e/movie",
     "movie": "apps/movie",
     "movie-core-ui": "libs/movie/core-ui",
     "movie-data-access": "libs/movie/data-access",
-    "movie-e2e": "apps/movie-e2e",
     "movie-feature-app": "libs/movie/feature-app",
     "movie-feature-public": "libs/movie/feature-public",
     "movie-shell": "libs/movie/shell"

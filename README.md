@@ -15,7 +15,7 @@ Its a mix of websites, servers, libraries and packages!
 <details>
   <summary>Tech Stack</summary>
   <br/>
-    <b>🌐 Web</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://reactjs.org">React</a>
+    <b>🌐 Web</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://reactjs.org">React</a>
     <br />
     <b>🕸 Servers</b>&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
   <br />
@@ -34,7 +34,6 @@ Its a mix of websites, servers, libraries and packages!
 | MovieReviewer       |         |        ✔️         |                      |
 | MovieServer         |         |        ✔️         |                      |
 | SubscriptionHandler |         |                   |          ✔️          |
-| PasswrdMngr         |         |                   |          ✔️          |
 | Portfolio           |         |                   |          ✔️          |
 
 ## Languages used
