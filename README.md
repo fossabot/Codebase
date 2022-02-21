@@ -24,20 +24,20 @@ Its a mix of websites, servers, libraries and packages!
 
 ### Apps
 
-> 🎥 [MovieReviewer](https://github.com/VincentThomas06/Projects/tree/main/apps/movie): `apps/movie`<br/><br/>
-> 🌐 [MovieServer](https://github.com/VincentThomas06/Projects/tree/main/servers/movie): `servers/movie`
+
+>  🎥 [MovieReviewer](https://github.com/VincentThomas06/Projects/tree/main/apps/movie): `apps/movie`<br/><br/>
+>  🌐 [MovieServer](https://github.com/VincentThomas06/Projects/tree/main/servers/movie): `servers/movie`
 
 ### Status
 
-| Projects/Ideas      |⚡ Done | 🚧 In Development | 🤔 Planning to build |
-| ------------------- | :----: | :---------------: | :------------------: |
-| MovieReviewer       |        |        ✔️         |                      |
-| MovieServer         |        |        ✔️         |                      |
-| SubscriptionHandler |        |                   |          ✔️          |
-| PasswrdMngr         |        |                   |          ✔️          |
+| Projects/Ideas      | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
+| ------------------- | :-----: | :---------------: | :------------------: |
+| MovieReviewer       |         |        ✔️         |                      |
+| MovieServer         |         |        ✔️         |                      |
+| SubscriptionHandler |         |                   |          ✔️          |
+| PasswrdMngr         |         |                   |          ✔️          |
 
 ### Languages used
-
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
 
 ### Better readme coming soon...
