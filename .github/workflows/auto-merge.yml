@@ -8,4 +8,4 @@ jobs:
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       - name: Enable Github Automerge
-      - uses: alexwilson/enable-github-automerge-action@1.0.0
+        uses: alexwilson/enable-github-automerge-action@1.0.0
