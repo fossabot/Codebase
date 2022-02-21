@@ -13,7 +13,7 @@ export class AuthService {
     private readonly jwt: JwtService,
   ) {}
 
-  async validateUser(userId) {
+  async validateUser(userId: string) {
     const user = await this.db.user.findUnique({
       where: {
         id: userId,

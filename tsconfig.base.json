@@ -11,12 +11,17 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@projects/libs/movie/core-ui": ["libs/movie/core-ui/src/index.ts"],
+      "@projects/libs/movie/core-ui": [
+        "libs/movie/core-ui/src/index.ts"
+      ],
       "@projects/libs/movie/data-access": [
         "libs/movie/data-access/src/index.ts"
       ],
@@ -24,9 +29,11 @@
         "libs/movie/feature-app/src/index.tsx"
       ],
       "@projects/libs/movie/feature-public": [
-        "libs/movie/feature-public/src/index.tsx"
+        "libs/movie/feature-public/src/index.ts"
       ],
-      "@projects/libs/movie/shell": ["libs/movie/shell/src/index.tsx"]
+      "@projects/libs/movie/shell": [
+        "libs/movie/shell/src/index.tsx"
+      ]
     }
   }
 }

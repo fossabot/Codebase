@@ -28,6 +28,7 @@ export class MoviesService {
       adult,
     } = movie;
     try {
+      console.log(movie_id);
       return await this.db.movie.create({
         data: {
           title,
@@ -37,11 +38,25 @@ export class MoviesService {
           release_date,
           movie_id,
           adult,
-          groupId,
+          group: {
+            connect: {
+              id: groupId,
+            },
+          },
         },
       });
-    } catch {
+    } catch (e) {
+      console.log('ERRROR');
       throw new HttpException({ error: 'MOVIE_EXISTS' }, 409);
     }
+  }
+
+  async getById(movieId: string) {
+    const data = await this.db.movie.findUnique({
+      where: {
+        id: movieId,
+      },
+    });
+    return data;
   }
 }

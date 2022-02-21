@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 interface Inputs {
   size?: string;
-  children: any;
+  children: ReactNode;
 }
 
 export const Title = styled(motion.h1)`

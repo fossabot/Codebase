@@ -1,8 +1,4 @@
-import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import styled, { css } from 'styled-components';
-
-/* eslint-disable-next-line */
-// export interface InputProps {}
+import styled from "styled-components";
 
 export const Input = styled.input`
   padding: 0.9rem;
@@ -13,9 +9,3 @@ export const Input = styled.input`
   font-size: 1.1rem;
   color: ${({ theme }) => theme.text.third};
 `;
-
-// export function Input(props: any) {
-//   return <StyledInput {...props} />;
-// }
-
-// export default Input;

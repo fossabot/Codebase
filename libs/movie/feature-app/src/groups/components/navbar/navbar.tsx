@@ -8,7 +8,7 @@ export interface NavbarProps {}
 const StyledNavbar = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
   align-items: center;
 `;
 

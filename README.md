@@ -1,4 +1,5 @@
 ## 🧑‍💻 Projects Codebase
+
 This is all of my projects cramped into one monorepo.
 Its a mix of websites, servers, libraries and packages!
 
@@ -11,7 +12,6 @@ Its a mix of websites, servers, libraries and packages!
 
 > Not familiar with me? Check out [my profile](https://github.com/VincentThomas06)
 
-
 <details>
   <summary>Tech Stack</summary>
   <br/>
@@ -23,6 +23,7 @@ Its a mix of websites, servers, libraries and packages!
 </details>
 
 ### Apps
+
 
 >  🎥 [MovieReviewer](https://github.com/VincentThomas06/Projects/tree/main/apps/movie): `apps/movie`<br/><br/>
 >  🌐 [MovieServer](https://github.com/VincentThomas06/Projects/tree/main/servers/movie): `servers/movie`
@@ -38,4 +39,5 @@ Its a mix of websites, servers, libraries and packages!
 
 ### Languages used
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
+
 ### Better readme coming soon...
