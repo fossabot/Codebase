@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "nx": "nx",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "push": "./tools/scripts/push.sh"
   },
   "workspaces": [
     "packages/*",
