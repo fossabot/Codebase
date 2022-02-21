@@ -11,6 +11,17 @@ Its a mix of websites, servers, libraries and packages!
 
 > Not familiar with me? Check out [my profile](https://github.com/VincentThomas06)
 
+
+<details>
+  <summary>Tech Stack</summary>
+  <br/>
+    <b>🌐 Web</b> <a href="https://reactjs.org">React</a>
+    <br />
+    <b>🕸 Servers</b> <a href="https://nestjs.org">Nestjs</a>
+  <br />
+    <b>◼ Cli:s</b> <a href="https://oclif.io">Oclif</a>
+</details>
+
 ### Apps
 
 >  🎥 [MovieReviewer](https://github.com/VincentThomas06/Projects/tree/main/apps/movie): `apps/movie`<br/><br/>
