@@ -2,17 +2,23 @@
   "root": "libs/movie/feature-app",
   "sourceRoot": "libs/movie/feature-app/src",
   "projectType": "library",
-  "tags": ["movie"],
+  "tags": [
+    "movie"
+  ],
   "targets": {
     "build": {
       "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/movie/feature-app",
         "tsConfig": "libs/movie/feature-app/tsconfig.lib.json",
         "project": "libs/movie/feature-app/package.json",
         "entryFile": "libs/movie/feature-app/src/index.tsx",
-        "external": ["react/jsx-runtime"],
+        "external": [
+          "react/jsx-runtime"
+        ],
         "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
         "compiler": "swc",
         "assets": [
@@ -26,17 +32,29 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/movie/feature-app/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/movie/feature-app/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/movie/feature-app"],
+      "outputs": [
+        "coverage/libs/movie/feature-app"
+      ],
       "options": {
         "jestConfig": "libs/movie/feature-app/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "commitMessageFormat": "chore(${projectName}): release version ${version}"
       }
     }
   }
