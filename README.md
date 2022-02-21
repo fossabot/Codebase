@@ -15,12 +15,12 @@ Its a mix of websites, servers, libraries and packages!
 #### Status
 
 
-|                     | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
+| Projects/Ideas      | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
 | ------------------- | :-----: | :---------------: | :------------------: |
 | MovieReviewer       |         |        ✔️         |                      |
 | MovieServer         |         |        ✔️         |                      |
 | SubscriptionHandler |         |                   |          ✔️          |
-
+| PasswrdMngr         |         |                   |          ✔️          |
 
 
 ### Better readme coming soon...
