@@ -2,12 +2,11 @@
   "version": 2,
   "projects": {
     "movie": "apps/movie",
-    "movie-shell": "libs/movie/shell",
     "movie-core-ui": "libs/movie/core-ui",
     "movie-data-access": "libs/movie/data-access",
+    "movie-e2e": "apps/movie-e2e",
     "movie-feature-app": "libs/movie/feature-app",
     "movie-feature-public": "libs/movie/feature-public",
-    "movie-e2e": "apps/movie-e2e",
-    "movie-server": "servers/movie"
+    "movie-shell": "libs/movie/shell"
   }
 }

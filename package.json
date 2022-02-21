@@ -58,11 +58,6 @@
   ],
   "dependencies": {
     "@hookform/resolvers": "^2.8.8",
-    "@nestjs/cli": "^8.2.1",
-    "@nestjs/common": "^8.0.0",
-    "@nestjs/core": "^8.0.0",
-    "@nestjs/microservices": "^8.3.1",
-    "@nestjs/platform-express": "^8.0.0",
     "@tanstack/react-location": "3.4.4",
     "@tanstack/react-location-rank-routes": "^3.4.4",
     "axios": "^0.25.0",
