@@ -5,7 +5,12 @@ module.exports = (options) => {
     ...options,
     optimization: {
       minimize: true,
-      minimizer: [new TerserPlugin()],
+
+      minimizer: [
+        new TerserPlugin({
+          extractComments: true,
+        }),
+      ],
     },
   };
 };

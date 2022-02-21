@@ -1,9 +1,4 @@
 {
   "name": "@projects/libs-movie-shell",
-  "version": "0.0.1",
-  "dependencies": {
-    "@tanstack/react-location-rank-routes": "^3.4.4",
-    "react-query": "^3.34.14",
-    "recoil": "^0.6.1"
-  }
+  "version": "0.0.1"
 }

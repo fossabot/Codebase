@@ -1,7 +1,5 @@
 import { ApiMovieModel, DBGroupModel } from "../../types";
-import { getClient } from "../../utils";
-import axios, { Axios } from "axios";
-const sbClient = getClient();
+import axios from "axios";
 
 export const addMovieToGroup = async (
   movie: ApiMovieModel,
@@ -24,47 +22,47 @@ export const getGroupFromId = async (groupId: string) => {
   return group;
 };
 
-export const getGroupIcon = (group: DBGroupModel): any => {
-  if (group.group_icon) {
-    const [bucket, ...pathArr] = group.group_icon.split("/");
-    const path = pathArr.join("/");
-    const res = sbClient.storage.from(bucket).getPublicUrl(path);
-    return [res.data?.publicURL, res.error];
-  } else {
-    return [null, null];
-  }
-};
+// export const getGroupIcon = (group: DBGroupModel): any => {
+//   if (group.group_icon) {
+//     const [bucket, ...pathArr] = group.group_icon.split("/");
+//     const path = pathArr.join("/");
+//     const res = sbClient.storage.from(bucket).getPublicUrl(path);
+//     return [res.data?.publicURL, res.error];
+//   } else {
+//     return [null, null];
+//   }
+// };
 
-export const getGroupFromMember = async (userId: string) => {
-  const { data, error } = await sbClient
-    .from("group_members")
-    .select()
-    .eq("user_id", userId);
-  if (data) {
-    const result = data.map(async (value) => {
-      const [gruop, error] = await getGroupFromId(value.group_id);
-      return gruop;
-    });
-    const toReturn = await Promise.all(result);
-    return [toReturn, error];
-  } else {
-    return [null, null];
-  }
-};
+// export const getGroupFromMember = async (userId: string) => {
+//   const { data, error } = await sbClient
+//     .from("group_members")
+//     .select()
+//     .eq("user_id", userId);
+//   if (data) {
+//     const result = data.map(async (value) => {
+//       const [gruop, error] = await getGroupFromId(value.group_id);
+//       return gruop;
+//     });
+//     const toReturn = await Promise.all(result);
+//     return [toReturn, error];
+//   } else {
+//     return [null, null];
+//   }
+// };
 
-export const isMemberInGroup = async (
-  userId: string,
-  groupId: DBGroupModel["id"]
-) => {
-  const { data, error } = await sbClient
-    .from("group_members")
-    .select()
-    .eq("user_id", userId)
-    .eq("group_id", groupId)
-    .maybeSingle();
-  error ? console.log("ERROR", error) : null;
-  return data ? true : false;
-};
+// export const isMemberInGroup = async (
+//   userId: string,
+//   groupId: DBGroupModel["id"]
+// ) => {
+//   const { data, error } = await sbClient
+//     .from("group_members")
+//     .select()
+//     .eq("user_id", userId)
+//     .eq("group_id", groupId)
+//     .maybeSingle();
+//   error ? console.log("ERROR", error) : null;
+//   return data ? true : false;
+// };
 
 export const createGroup = async (groupName: DBGroupModel["name"]) => {
   try {

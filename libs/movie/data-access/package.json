@@ -1,14 +1,5 @@
 {
   "name": "@projects/libs-movie-data-access",
   "version": "0.0.1",
-  "type": "commonjs",
-  "dependencies": {
-    "axios": "^0.25.0",
-    "react-query": "^3.34.14",
-    "uuid": "^8.3.2"
-  },
-  "devDependencies": {
-    "@types/uuid": "^8.3.4",
-    "eslint-plugin-prettier": "^4.0.0"
-  }
+  "type": "commonjs"
 }
