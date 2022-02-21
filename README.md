@@ -1,4 +1,4 @@
-## 🧑‍💻 Codebase
+# 🧑‍💻 Codebase
 
 This is all of my Codebase cramped into one monorepo.
 Its a mix of websites, servers, libraries and packages!
@@ -22,12 +22,12 @@ Its a mix of websites, servers, libraries and packages!
     <b>◼ Cli:s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
 </details>
 
-### Apps
+## Apps
 
-> 🎥 [MovieReviewer](https://github.com/VincentThomas06/Codebase/tree/main/apps/movie): `apps/movie`<br/><br/>
-> 🌐 [MovieServer](https://github.com/VincentThomas06/Codebase/tree/main/servers/movie): `servers/movie`
+- 🎥 [MovieReviewer](https://github.com/VincentThomas06/Codebase/tree/main/apps/movie): `apps/movie`<br/><br/>
+- 🖥️ [MovieServer](https://github.com/VincentThomas06/Codebase/tree/main/servers/movie): `servers/movie`
 
-### Status
+## Status
 
 | Projects/Ideas      | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
 | ------------------- | :-----: | :---------------: | :------------------: |
@@ -37,8 +37,8 @@ Its a mix of websites, servers, libraries and packages!
 | PasswrdMngr         |         |                   |          ✔️          |
 | Portfolio           |         |                   |          ✔️          |
 
+## Languages used
 
-### Languages used
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
 
 ### Better readme coming soon...
