@@ -1,5 +1,6 @@
 ## 🧑‍💻 Projects Codebase
-This is all of my projects cramped into one monorepo
+This is all of my projects cramped into one monorepo.
+Its a mix of websites, servers, libraries and packages!
 
 
 ![GitHub](https://img.shields.io/github/license/VincentThomas06/Projects?style=flat-square&color=yellow)
@@ -10,5 +11,16 @@ This is all of my projects cramped into one monorepo
 
 >  🎥 [MovieReviewer](https://github.com/VincentThomas06/Projects/tree/main/apps/movie): `apps/movie`<br/><br/>
 >  🌐 [MovieServer](https://github.com/VincentThomas06/Projects/tree/main/servers/movie): `servers/movie`
+
+#### Status
+
+
+|                     | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
+| ------------------- | :-----: | :---------------: | :------------------: |
+| MovieReviewer       |         |        ✔️         |                      |
+| MovieServer         |         |        ✔️         |                      |
+| SubscriptionHandler |         |                   |          ✔️          |
+
+
 
 ### Better readme coming soon...
