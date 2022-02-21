@@ -7,14 +7,16 @@ Its a mix of websites, servers, libraries and packages!
 ![GitHub](https://img.shields.io/github/license/VincentThomas06/Projects?style=flat-square&color=yellow)
 ![GitHub issues](https://img.shields.io/github/issues-raw/VincentThomas06/Projects?style=flat-square)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/VincentThomas06/Projects?style=flat-square)
+[![Visits Badge](https://badges.pufler.dev/visits/VincentThomas06/Projects?style=flat-square)](https:braydoncoyer.dev)
 
-#### Apps:
+> Not familiar with me? Check out [my profile](https://github.com/VincentThomas06)
+
+### Apps
 
 >  🎥 [MovieReviewer](https://github.com/VincentThomas06/Projects/tree/main/apps/movie): `apps/movie`<br/><br/>
 >  🌐 [MovieServer](https://github.com/VincentThomas06/Projects/tree/main/servers/movie): `servers/movie`
 
-#### Status
-
+### Status
 
 | Projects/Ideas      | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
 | ------------------- | :-----: | :---------------: | :------------------: |
@@ -23,5 +25,6 @@ Its a mix of websites, servers, libraries and packages!
 | SubscriptionHandler |         |                   |          ✔️          |
 | PasswrdMngr         |         |                   |          ✔️          |
 
-
+### Languages used
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
 ### Better readme coming soon...
