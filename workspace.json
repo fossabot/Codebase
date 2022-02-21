@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "..-packages-profile-readme": "packages/profile-readme",
     "e2e-movie": "apps/e2e/movie",
     "movie": "apps/movie",
     "movie-core-ui": "libs/movie/core-ui",
