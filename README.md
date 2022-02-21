@@ -37,8 +37,8 @@ Its a mix of websites, servers, libraries and packages!
 | PasswrdMngr         |         |                   |          ✔️          |
 | Portfolio           |         |                   |          ✔️          |
 
-### Languages used
 
+### Languages used
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
 
 ### Better readme coming soon...
