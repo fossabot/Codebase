@@ -19,3 +19,7 @@ export const Row = styled.div`
     `;
   }}
 `;
+
+export function RowTest(props: any) {
+  return <Row {...props} />;
+}

@@ -11,6 +11,8 @@ const client = new QueryClient();
 
 export * from "./router";
 export * from "./store";
+export * from "./themes/dark";
+export * from "./themes/light";
 
 const Styles = styled.div`
   background-color: ${({

@@ -1,16 +1,13 @@
 {
   "presets": [
     [
-      "@nrwl/react/babel", {
+      // "react",
+      "@nrwl/react/babel",
+      {
         "runtime": "automatic",
         "useBuiltIns": "usage"
-        
       }
     ]
   ],
-  "plugins": [
-    
-    
-    
-  ]
+  "plugins": []
 }

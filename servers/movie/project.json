@@ -21,7 +21,7 @@
     },
     "build": {
       "executor": "@nrwl/workspace:run-commands",
-      "outputs": ["dist/servers/movie"],
+      "outputs": ["servers/movie/dist"],
       "options": {
         "cwd": "servers/movie",
         "command": "yarn build"

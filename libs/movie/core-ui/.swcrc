@@ -1,14 +1,17 @@
 {
+  "minify": true,
   "jsc": {
     "target": "es2017",
     "parser": {
       "syntax": "typescript",
       "decorators": true,
-      "dynamicImport": true
+      "dynamicImport": true,
+      "jsx": true
     },
     "transform": {
       "decoratorMetadata": true,
-      "legacyDecorator": true
+      "legacyDecorator": true,
+      "react": { "runtime": "automatic" }
     },
     "keepClassNames": true,
     "externalHelpers": true,

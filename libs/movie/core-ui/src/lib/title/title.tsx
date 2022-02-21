@@ -6,7 +6,6 @@ interface Inputs {
   size?: string;
   children: ReactNode;
 }
-
 export const Title = styled(motion.h1)`
   font-family: "Roboto";
   font-weight: 600;
@@ -22,6 +21,6 @@ export const Title = styled(motion.h1)`
   }
 `;
 
-// export function Title(props: Inputs) {
-//   return <H1 {...props}>{props.children}</H1>;
-// }
+export function TitleTest(props: Inputs) {
+  return <Title {...props}>{props.children}</Title>;
+}
