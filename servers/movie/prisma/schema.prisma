@@ -28,7 +28,7 @@ model Group {
   id      String         @id @default(uuid())
   name    String
   ownerId String? @map("user_id")
-  
+
   members GroupMembers[]
   invites Invite[]
   movie Movie[]
