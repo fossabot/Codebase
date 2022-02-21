@@ -20,8 +20,8 @@ jobs:
         with:
           node-version: "14"
       - run: npm ci
-      - run: npx nx affected --target=lint --parallel --max-parallel=3
-      - run: npx nx affected --target=build --parallel --max-parallel=2
+      - run: npm run nx affected --target=lint --parallel --max-parallel=3
+      - run: npm run nx affected --target=build --parallel --max-parallel=2
   pr:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
@@ -36,5 +36,5 @@ jobs:
         with:
           node-version: "14"
       - run: npm ci
-      - run: npx nx affected --target=lint --parallel --max-parallel=3
-      - run: npx nx affected --target=build --parallel --max-parallel=3
+      - run: npm run nx affected --target=lint --parallel --max-parallel=3
+      - run: npm run nx affected --target=build --parallel --max-parallel=3
