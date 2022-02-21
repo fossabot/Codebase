@@ -26,6 +26,7 @@ Its a mix of websites, servers, libraries and packages!
 
 - 🎥 [MovieReviewer](https://github.com/VincentThomas06/Codebase/tree/main/apps/movie): `apps/movie`<br/><br/>
 - 🖥️ [MovieServer](https://github.com/VincentThomas06/Codebase/tree/main/servers/movie): `servers/movie`
+- 😁 [Profile Page](https://github.com/VincentThomas06): [packages/profile-readme](https://github.com/VincentThomas06/VincentThomas06) (git-repo in git-repo)
 
 ## Status
 

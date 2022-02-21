@@ -91,7 +91,7 @@ export function GroupMovie(props: MovieProps) {
           <Text>{movie?.overview}</Text>
         </HeaderContainer>
         <PreviewContainer>
-          {preview.results[0]?.key !== undefined ? (
+          {preview?.results[0]?.key !== undefined ? (
             <Preview
               width="100%"
               height="315"
