@@ -38,3 +38,14 @@ jobs:
       - run: npm ci
       - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=2
+  auto-merge:
+    runs-on: ubuntu-latest
+    if ${{ github.event_name == 'pull_request' }}
+    needs: [pr]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Auto Merge Bot
+        uses: casassg/auto-merge-bot@master
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+
