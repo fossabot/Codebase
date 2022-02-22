@@ -7,12 +7,11 @@ on:
 
   workflow_run:
     workflows: [validate-changes]
-    branches: [dev, main]
     types: [completed]
 jobs:
   validate-changes:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
+    # if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
@@ -26,10 +25,11 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npx nx affected --target=build --parallel=2
+      - run: echo 'github ${{ github }}'
 
   automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.event.action == "labeled" }}
+    # if: ${{ github.event.action == "labeled" }}
     steps:
       - uses: ahmadnassri/action-workflow-run-wait@v1
       - name: automerge
