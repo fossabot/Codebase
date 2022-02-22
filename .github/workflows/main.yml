@@ -4,6 +4,22 @@ on:
     branches:
       - main
   pull_request:
+    types:
+      - labeled
+      - unlabeled
+      - synchronize
+      - opened
+      - edited
+      - ready_for_review
+      - reopened
+      - unlocked
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 
 jobs:
   main:
@@ -38,16 +54,10 @@ jobs:
       - run: npm install
    #   - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=2
-  auto-merge:
+  automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-    needs: [pr]
     steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
-
-      - uses: casassg/auto-merge-bot@master
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.14.3"
         env:
-          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
