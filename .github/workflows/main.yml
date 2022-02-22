@@ -40,7 +40,7 @@ jobs:
       - run: npx nx affected --target=build --parallel=2
   auto-merge:
     runs-on: ubuntu-latest
-    if ${{ github.event_name == 'pull_request' }}
+    if: ${{ github.event_name == 'pull_request' }}
     needs: [pr]
     steps:
       - uses: actions/checkout@v2
