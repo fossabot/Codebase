@@ -32,7 +32,7 @@
     "@nrwl/workspace": "latest",
     "@swc/cli": "~0.1.52",
     "@swc/core": "1.2.143",
-    "@swc/helpers": "~0.2.14",
+    "@swc/helpers": "~0.3.3",
     "@swc/jest": "0.2.15",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
