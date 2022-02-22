@@ -1,3 +1,6 @@
+# DONT USE ' IN THIS FILE.
+# DONT USE TABS IN THIS FILE
+
 name: MainCI
 on:
   pull_request:
