@@ -7,9 +7,10 @@ Its a mix of websites, servers, libraries and packages!
   <summary>Quick Links</summary>
   <br />
   <ul>
+    <li><a href="https://github.com/VincentThomas06/Codebase#Tech-stack">Tech stack</a></li>
     <li><a href="https://github.com/VincentThomas06/Codebase#Apps">Apps in codebase</a></li>
     <li><a href="https://github.com/VincentThomas06/Codebase#Status">Status of apps</a></li>
-    <li><a href="https://github.com/VincentThomas06/Codebase#languages-used">Languages used</a></li>
+    <li><a href="https://github.com/VincentThomas06/Codebase#Languages-used">Languages used</a></li>
   </ul>
   <br />
 </details>
@@ -23,17 +24,10 @@ Its a mix of websites, servers, libraries and packages!
 
 > Not familiar with me? Check out [my profile](https://github.com/VincentThomas06)
 
-<details>
-  <summary>Tech Stack</summary>
-  <br/>
-    <b>🌐 Web</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nestjs.com">React</a>
-    <br />
-    <b>🕸 Servers</b>&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
-  <br />
-    <b>◼ Cli:s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
-  <br />
-  <br />
-</details>
+## Tech Stack
+* 🌐 Web&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nestjs.com">React</a>
+* 🕸 Servers&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
+* ◼ Cli:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
 
 ## Apps
 
@@ -53,5 +47,3 @@ Its a mix of websites, servers, libraries and packages!
 ## Languages used
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
-
-### Better readme coming soon...
