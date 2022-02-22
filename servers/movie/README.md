@@ -1,6 +1,6 @@
 # MovieServer
 
-This project uses [Nest](https://github.com/nestjs/nest) for building servers
+This project uses [Nest](https://github.com/nestjs/nest) for building servers. This is the backend for MovieReviewer
 
 ## Installation
 
