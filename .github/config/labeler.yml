@@ -2,10 +2,6 @@
 root:
   - '*'
 
-movie:
-  - servers/movie/**/*
-  - apps/movie/**/*
-
 e2e:
   - apps/e2e/**/*
 
@@ -16,7 +12,7 @@ test:
 source:
   - any: ['**/src/**/*', '!**/*.md', '!**/*.json', '**/.*rc']
 
-docs:
+documentation:
   - '**/*.md'
 
 typescript:
@@ -30,3 +26,6 @@ javascript:
 
 'git config':
   - any: ['**/*git*']
+
+ci:
+  - any: ['.github/**/*.yml']

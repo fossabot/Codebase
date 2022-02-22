@@ -9,13 +9,18 @@ on:
       - labeled
 
   workflow_run:
-    workflows: [validate-changes, automerge]
-    types: [completed]
+    workflows:
+      - validate-changes
+      - automerge
+    types:
+      - completed
 jobs:
   # validate-changes:
   #   runs-on: ubuntu-latest
   #   if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
   #   steps:
+  #     - uses: bahmutov/npm-install@v1
+
   #     - name: 'Checkout code'
   #       uses: actions/checkout@v2
   #       with:
@@ -25,15 +30,13 @@ jobs:
   #     - uses: actions/setup-node@v1
   #       with:
   #         node-version: 16
-  #     - run: npm ci
   #     - run: npx nx affected --target=build --parallel=2
   #     - run: echo '${{ toJSON(github.event) }}'
 
   automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.event.action == 'labeled' && github.event.label.name == 'automerge' }}
+    if: ${{ github.event.action == 'labeled' && github.event.label.name == 'automerge' && github.event.workflow_run.conclusion == 'success' }}
     steps:
-      - uses: ahmadnassri/action-workflow-run-wait@v1
       - name: automerge
         uses: 'pascalgn/automerge-action@v0.14.3'
         env:
