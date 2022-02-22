@@ -52,3 +52,8 @@ Its a mix of websites, servers, libraries and packages!
 ## Languages used
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FVincentThomas06%2FCodebase.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FVincentThomas06%2FCodebase?ref=badge_shield)
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FVincentThomas06%2FCodebase.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FVincentThomas06%2FCodebase?ref=badge_large)
