@@ -24,10 +24,11 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npx nx affected --target=build --parallel=2
+      - run: echo '${{ toJSON(github.event) }}'
 
   automerge:
     runs-on: ubuntu-latest
-    # if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
+    # if: ${{ github.event == "labeled" }}
     steps:
       - uses: ahmadnassri/action-workflow-run-wait@v1
       - name: automerge
@@ -35,4 +36,4 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "automerge"
-      - run: echo "${{github.event}}"
+      - run: echo '${{ toJSON(github.event) }}'
