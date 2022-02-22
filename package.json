@@ -5,7 +5,7 @@
   "scripts": {
     "nx": "nx",
     "prepare": "husky install",
-    "push": "./tools/scripts/push.sh"
+    "push": "sh ./tools/scripts/push.sh"
   },
   "workspaces": [
     "packages/*",

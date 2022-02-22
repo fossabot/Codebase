@@ -38,3 +38,16 @@ jobs:
       - run: npm install
    #   - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=2
+  auto-merge:
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' }}
+    needs: [pr]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - uses: casassg/auto-merge-bot@master
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
