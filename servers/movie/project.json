@@ -10,7 +10,6 @@
         "command": "yarn lint"
       }
     },
-
     "test": {
       "executor": "@nrwl/workspace:run-commands",
       "outputs": ["./coverage"],
