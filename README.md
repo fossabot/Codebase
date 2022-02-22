@@ -3,6 +3,16 @@
 This is all of my Codebase cramped into one monorepo.
 Its a mix of websites, servers, libraries and packages!
 
+<details>
+  <summary>Quick Links</summary>
+  <a href="#testing">testing</a>
+  <br/>
+  <br />
+    <b>🕸 Servers</b>&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
+  <br />
+    <b>◼ Cli:s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
+</details>
+
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/VincentThomas06/Codebase?color=red&label=codebase&style=flat-square)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/VincentThomas06/Codebase?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/VincentThomas06/Codebase?style=flat-square&color=yellow)
@@ -28,7 +38,7 @@ Its a mix of websites, servers, libraries and packages!
 - 🖥️ [MovieServer](https://github.com/VincentThomas06/Codebase/tree/main/servers/movie): `servers/movie`
 - 😁 [Profile Page](https://github.com/VincentThomas06): [packages/profile-readme](https://github.com/VincentThomas06/VincentThomas06) (git-repo in git-repo)
 
-## Status
+<h2 name="testing">Status</h2>
 
 | Projects/Ideas      | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
 | ------------------- | :-----: | :---------------: | :------------------: |
