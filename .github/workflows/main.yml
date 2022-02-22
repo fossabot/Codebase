@@ -29,11 +29,6 @@ jobs:
       - run: npm ci
    #   - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=2
-
-  automerge:
-    needs: "check-pr"
-    runs-on: ubuntu-latest
-    steps:
       - name: automerge
         uses: "pascalgn/automerge-action@v0.14.3"
         env:
