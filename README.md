@@ -28,7 +28,7 @@ Its a mix of websites, servers, libraries and packages!
 * 🌐 Web&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nestjs.com">React</a>
 * 🕸 Servers&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
 * ◼ Cli:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
-> As you might have guessed, i'm quite a typescript fan!
+> As you might have guessed, i'm quite a Javascript/Typescript fan!
 ## Apps
 
 - 🎥 [MovieReviewer](https://github.com/VincentThomas06/Codebase/tree/main/apps/movie): `apps/movie`<br/>
