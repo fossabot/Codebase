@@ -28,7 +28,7 @@ jobs:
 
   automerge:
     runs-on: ubuntu-latest
-    # if: ${{ github.event == "labeled" }}
+    if: ${{ github.event.action == "labeled" && github.event.label.name == "automerge" }}
     steps:
       - uses: ahmadnassri/action-workflow-run-wait@v1
       - name: automerge
@@ -36,4 +36,3 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "automerge"
-      - run: echo '${{ toJSON(github.event) }}'
