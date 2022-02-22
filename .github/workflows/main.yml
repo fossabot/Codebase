@@ -6,13 +6,13 @@ on:
       - labeled
 
   workflow_run:
-    workflows: [ validate-changes ]
-    branches: [ dev, main ]
-    types: [ completed ]
+    workflows: [validate-changes]
+    branches: [dev, main]
+    types: [completed]
 jobs:
   validate-changes:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' && gitub.event.action == 'opened' }}
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v2
