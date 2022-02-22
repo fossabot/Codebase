@@ -11,9 +11,8 @@ on:
     types: [ completed ]
 jobs:
   validate-changes:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' }}
-		if: ${{ gitub.event.action == "opened" }}
+  	runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'pull_request' && gitub.event.action == 'opened' }}
     steps:
       - uses: actions/checkout@v2
         with:
