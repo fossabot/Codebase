@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
     steps:
-      - name: "Checkout code"
+      - name: 'Checkout code'
         uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.ref }}
@@ -28,11 +28,11 @@ jobs:
 
   automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.event.action == "labeled" && github.event.label.name == "automerge" }}
+    if: ${{ github.event.action == 'labeled' && github.event.label.name == 'automerge' }}
     steps:
       - uses: ahmadnassri/action-workflow-run-wait@v1
       - name: automerge
-        uses: "pascalgn/automerge-action@v0.14.3"
+        uses: 'pascalgn/automerge-action@v0.14.3'
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "automerge"
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+          MERGE_LABELS: 'automerge'
