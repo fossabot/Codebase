@@ -52,5 +52,3 @@ Its a mix of websites, servers, libraries and packages!
 ## Languages used
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
-
-### Working on my readme ... Leave a suggestion as a issue or pull request, and i'll review it!
