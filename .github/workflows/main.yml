@@ -12,22 +12,22 @@ on:
     workflows: [validate-changes, automerge]
     types: [completed]
 jobs:
-  validate-changes:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
-    steps:
-      - name: 'Checkout code'
-        uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npx nx affected --target=build --parallel=2
-      - run: echo '${{ toJSON(github.event) }}'
+  # validate-changes:
+  #   runs-on: ubuntu-latest
+  #   if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
+  #   steps:
+  #     - name: 'Checkout code'
+  #       uses: actions/checkout@v2
+  #       with:
+  #         ref: ${{ github.event.pull_request.head.ref }}
+  #     - name: Derive appropriate SHAs for base and head for `nx affected` commands
+  #       uses: nrwl/nx-set-shas@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: 16
+  #     - run: npm ci
+  #     - run: npx nx affected --target=build --parallel=2
+  #     - run: echo '${{ toJSON(github.event) }}'
 
   automerge:
     runs-on: ubuntu-latest
