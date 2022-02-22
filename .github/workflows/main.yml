@@ -1,28 +1,16 @@
 name: CI
 on:
-  push:
-    branches:
-      - main
   pull_request:
+  pull_request_review:
+    types:
+      - submitted
+  check_suite:
+    types:
+      - completed
+  status: {}
 
 jobs:
-  main:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'pull_request' }}
-    steps:
-      - uses: actions/checkout@v2
-        name: Checkout [main]
-        with:
-          fetch-depth: 0
-      - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 16
-      - run: npm install
-#      - run: npx nx affected --target=lint --parallel=3
-      - run: npx nx affected --target=build --parallel=2
-  pr:
+  check-pr:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     steps:
@@ -38,3 +26,13 @@ jobs:
       - run: npm install
    #   - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=2
+
+  automerge:
+    if: github.event.review.state == 'approved'
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: "pascalgn/automerge-action@v0.14.3"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: "automerge"
