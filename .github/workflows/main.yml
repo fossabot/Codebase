@@ -1,19 +1,10 @@
-name: CI
+name: MainCI
 on:
   pull_request:
       types:
       - opened
-  pull_request_review:
-    types:
-      - submitted
-  check_suite:
-    types:
-      - completed
-  status: {}
-
 jobs:
-
-  check-pr:
+  validate-changes:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     steps:
@@ -29,8 +20,3 @@ jobs:
       - run: npm ci
    #   - run: npx nx affected --target=lint --parallel=3
       - run: npx nx affected --target=build --parallel=2
-      - name: automerge
-        uses: "pascalgn/automerge-action@v0.14.3"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-          MERGE_LABELS: "automerge"
