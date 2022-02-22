@@ -1,0 +1,32 @@
+# Add 'repo' label to any root file changes
+root:
+  - '*'
+
+movie:
+  - servers/movie/**/*
+  - apps/movie/**/*
+
+e2e:
+  - apps/e2e/**/*
+
+# Add 'test' label to any change to *.spec.js files within the source dir
+test:
+  - **/*.spec.ts
+
+source:
+  - any: ['**/src/**/*', '!**/*.md', '!**/*.json', "**/.*rc"]
+
+docs:
+  - "**/*.md"
+
+typescript:
+  - any: ['**/*.ts']
+
+javascript:
+  - any: ['**/*.js']
+
+"config/json":
+  - any: ['**/*.json']
+
+"git config":
+  - any: ['**/*git*']
