@@ -11,13 +11,13 @@ e2e:
 
 # Add 'test' label to any change to *.spec.js files within the source dir
 test:
-  - **/*.spec.ts
+  - '**/*.spec.ts'
 
 source:
-  - any: ['**/src/**/*', '!**/*.md', '!**/*.json', "**/.*rc"]
+  - any: ['**/src/**/*', '!**/*.md', '!**/*.json', '**/.*rc']
 
 docs:
-  - "**/*.md"
+  - '**/*.md'
 
 typescript:
   - any: ['**/*.ts']
@@ -25,8 +25,8 @@ typescript:
 javascript:
   - any: ['**/*.js']
 
-"config/json":
+'config/json':
   - any: ['**/*.json']
 
-"git config":
+'git config':
   - any: ['**/*git*']
