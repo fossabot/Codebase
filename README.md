@@ -5,12 +5,13 @@ Its a mix of websites, servers, libraries and packages!
 
 <details>
   <summary>Quick Links</summary>
-  <a href="#testing">testing</a>
-  <br/>
   <br />
-    <b>🕸 Servers</b>&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
+  <ul>
+    <li><a href="https://github.com/VincentThomas06/Codebase#Apps">Apps in codebase</a></li>
+    <li><a href="https://github.com/VincentThomas06/Codebase#Status">Status of apps</a></li>
+    <li><a href="https://github.com/VincentThomas06/Codebase#languages-used">Languages used</a></li>
+  </ul>
   <br />
-    <b>◼ Cli:s</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
 </details>
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/VincentThomas06/Codebase?color=red&label=codebase&style=flat-square)
@@ -38,7 +39,7 @@ Its a mix of websites, servers, libraries and packages!
 - 🖥️ [MovieServer](https://github.com/VincentThomas06/Codebase/tree/main/servers/movie): `servers/movie`
 - 😁 [Profile Page](https://github.com/VincentThomas06): [packages/profile-readme](https://github.com/VincentThomas06/VincentThomas06) (git-repo in git-repo)
 
-<h2 name="testing">Status</h2>
+## Status
 
 | Projects/Ideas      | ⚡ Done | 🚧 In Development | 🤔 Planning to build |
 | ------------------- | :-----: | :---------------: | :------------------: |
