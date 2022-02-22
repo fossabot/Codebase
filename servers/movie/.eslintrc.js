@@ -10,7 +10,6 @@ module.exports = {
     'plugin:prettier/recommended',
     '../../.eslintrc.json',
   ],
-  // root: true,
   env: {
     node: true,
     jest: true,
