@@ -25,7 +25,7 @@ jobs:
           node-version: 16
       - run: npm ci
       - run: npx nx affected --target=build --parallel=2
-			- run: echo ${{github}}
+			- run: echo "$GITHUB_CONTEXT"
 
 jobs:
 	automerge:
