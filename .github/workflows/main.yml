@@ -9,7 +9,7 @@ on:
       - labeled
 
   workflow_run:
-    workflows: [validate-changes]
+    workflows: [validate-changes, automerge]
     types: [completed]
 jobs:
   validate-changes:

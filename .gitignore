@@ -1,6 +1,7 @@
 dist
 node_modules
-**/.env
-**/.env.*
-**/.*.env
+.env
+.env.*
+.*.env
 tmp
+*.old
