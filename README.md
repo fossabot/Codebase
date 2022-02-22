@@ -25,10 +25,12 @@ Its a mix of websites, servers, libraries and packages!
 > Not familiar with me? Check out [my profile](https://github.com/VincentThomas06)
 
 ## Tech Stack
-* 🌐 Web&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nestjs.com">React</a>
-* 🕸 Servers&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
-* ◼ Cli:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
-> As you might have guessed, i'm quite a Javascript/Typescript fan!
+
+- 🌐 Web&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://nestjs.com">React</a>
+- 🕸 Servers&nbsp;&nbsp;&nbsp;<a href="https://nestjs.org">Nestjs</a>
+- ◼ Cli:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://oclif.io">Oclif</a>
+  > As you might have guessed, i'm quite a Javascript/Typescript fan!
+
 ## Apps
 
 - 🎥 [MovieReviewer](https://github.com/VincentThomas06/Codebase/tree/main/apps/movie): `apps/movie`<br/>
@@ -47,3 +49,5 @@ Its a mix of websites, servers, libraries and packages!
 ## Languages used
 
 ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=VincentThomas06&layout=compact&theme=codeSTACKr)
+
+### Working on my readme ... Leave a suggestion as a issue or pull request, and i'll review it!
