@@ -6,8 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "prebuild": "rimraf ./dist",
-    "build": "npx nest build --webpack --webpackPath webpack-prod.config.js",
+    "prebuild": "rimraf ../../dist/servers/movie",
+    "build": "npx nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "prestart": "npx prisma db push",
     "start": "npx nest start",

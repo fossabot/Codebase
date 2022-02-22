@@ -7,6 +7,7 @@
     "movie-data-access": "libs/movie/data-access",
     "movie-feature-app": "libs/movie/feature-app",
     "movie-feature-public": "libs/movie/feature-public",
+    "movie-server": "servers/movie",
     "movie-shell": "libs/movie/shell"
   }
 }
