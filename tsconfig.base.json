@@ -19,6 +19,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@projects/root/*": ["./*"],
       "@projects/libs/movie/core-ui": [
         "libs/movie/core-ui/src/index.ts"
       ],
