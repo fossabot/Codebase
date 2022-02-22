@@ -1,7 +1,7 @@
 name: MainCI
 on:
   pull_request:
-      types:
+    types:
       - opened
       - labeled
 
@@ -11,28 +11,28 @@ on:
     types: [ completed ]
 jobs:
   validate-changes:
-  	runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' && gitub.event.action == 'opened' }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
+      with:
+      ref: ${{ github.event.pull_request.head.ref }}
+      fetch-depth: 0
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
+      uses: nrwl/nx-set-shas@v2
       - uses: actions/setup-node@v1
-        with:
-          node-version: 16
+      with:
+        node-version: 16
       - run: npm ci
       - run: npx nx affected --target=build --parallel=2
 
-	automerge:
-		runs-on: ubuntu-latest
-		if: ${{ gitub.event.action == "labeled" }}
-		steps:
-			- uses: ahmadnassri/action-workflow-run-wait@v1
-			- name: automerge
-				uses: "pascalgn/automerge-action@v0.14.3"
-				env:
-					GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-				  MERGE_LABELS: "automerge"
+  automerge:
+    runs-on: ubuntu-latest
+    if: ${{ gitub.event.action == "labeled" }}
+    steps:
+      - uses: ahmadnassri/action-workflow-run-wait@v1
+      - name: automerge
+      uses: "pascalgn/automerge-action@v0.14.3"
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+        MERGE_LABELS: "automerge"
