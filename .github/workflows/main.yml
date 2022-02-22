@@ -28,7 +28,7 @@ jobs:
 
   automerge:
     runs-on: ubuntu-latest
-    if: ${{ github.event == "labeled" }}
+    # if: ${{ github.event == "labeled" }}
     steps:
       - uses: ahmadnassri/action-workflow-run-wait@v1
       - name: automerge
